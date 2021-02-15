@@ -10,7 +10,7 @@ def shot(player):
         shipArr = main.p1shipArr
     xCoord = int(input('Enter a X coordinate to fire upon: '))
     yCoord = int(input('Enter a Y coordinate to fire upon: '))
-    shotArr[xCoord][yCoord] = 1
+    shotArr[xCoord-1][yCoord-1] = 1
 
     #shot feedback
     if shipArr[xCoord][yCoord] == shotArr[xCoord][yCoord]:
