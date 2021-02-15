@@ -1,13 +1,15 @@
-import shotDetection
+#Name: Caden Kroonenberg
+
+import shotDetection, shipPlacement
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
 def printTopMap(player):
     if player == 1:
-        enemyShipArr = p2shipArr
-        shotArr = p1shotArr
+        enemyShipArr = shipPlacement.p2shipArr
+        shotArr = shotDetection.p1shotArr
     elif player == 2:
-        enemyShipArr = p1shipArr
-        shotArr = p2shotArr
+        enemyShipArr = shipPlacement.p1shipArr
+        shotArr = shotDetection.p2shotArr
     print("  A B C D E F G H I J")
     for i in range(0, 10):
         if(i < 9):
@@ -27,11 +29,11 @@ def printTopMap(player):
 #print bottom map - 'X' denotes ship placement, '*' denotes hit ship, '^' denotes area not fired upon by enemy
 def printBottomMap(player):
     if player == 1:
-        shipArr = p1shipArr
-        shotArr = p2shotArr
+        shipArr = shipPlacement.p1shipArr
+        shotArr = shotDetection.p2shotArr
     elif player == 2:
-        shipArr = p2shipArr
-        shotArr = p1shotArr
+        shipArr = shipPlacement.p2shipArr
+        shotArr = shotDetection.p1shotArr
     print("  A B C D E F G H I J")
     for i in range(0, 10):
         if(i < 9):
@@ -56,67 +58,18 @@ def run(shipCount):
     while not endGame:
         if player == 1:
             print("Player 1:")
-        else:
+        elif player == 2:
             print("Player 2:")
         printTopMap(player)
         print()
         printBottomMap(player)
         shotDetection.shot(player)
-        player = not player
+        if player == 1:
+            player = 2
+        elif player == 2:
+            player = 1
         #check for win condition
         #clear screen and tell players to switch
-
-p1shotArr = [
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            ]
-
-p1shipArr = [
-             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            ]
-
-p2shotArr = [
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            ]
-
-p2shipArr = [
-             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            ]
 
 shipCount = 5
 

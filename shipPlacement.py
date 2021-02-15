@@ -1,9 +1,35 @@
 #Name:
 
+p1shipArr = [
+             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            ]
+
+p2shipArr = [
+             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            ]
+
 import main
 
 #Will place a single ship in shipArr. Will throw runtime error if ship doesnt fit in array or overlaps w/ another ship.
-def placeShip(player: bool, shipCount: int):
-    #player 1 = true, player 2 = false
+def placeShip(player, shipCount):
+    #player 1 = 1, player 2 = 2
     print("placeShip() func")
     #code
