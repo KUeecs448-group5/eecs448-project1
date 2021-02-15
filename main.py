@@ -23,10 +23,10 @@ def printTopMap(player):
 def printBottomMap(player):
     if player == 1:
         shipArr = p1shipArr
-        shotArr = p1shotArr
+        shotArr = p2shotArr
     else:
         shipArr = p2shipArr
-        shotArr = p2shotArr
+        shotArr = p1shotArr
     for i in range(0, 10):
         for j in range(0, 10):
             if shipArr[i][j] == 0:
