@@ -1,6 +1,7 @@
 #Name: Caden Kroonenberg
-import main
 #user shot selection
+
+import shipPlacement
 
 p1shotArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -30,11 +31,11 @@ p2shotArr = [
 
 def shot(player):
     if player == 1:
-        shotArr = main.p1shotArr
-        shipArr = main.p2shipArr
+        shotArr = p1shotArr
+        shipArr = shipPlacement.p2shipArr
     else:
-        shotArr = main.p2shotArr
-        shipArr = main.p1shipArr
+        shotArr = p2shotArr
+        shipArr = shipPlacement.p1shipArr
     xCoord = int(input('Enter a X coordinate to fire upon: '))
     yCoord = int(input('Enter a Y coordinate to fire upon: '))
     shotArr[xCoord-1][yCoord-1] = 1

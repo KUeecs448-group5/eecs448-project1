@@ -1,12 +1,14 @@
-import shotDetection
+#Name: Caden Kroonenberg
+
+import shotDetection, shipPlacement
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
 def printTopMap(player):
     if player == 1:
-        enemyShipArr = p2shipArr
+        enemyShipArr = shipPlacement.p2shipArr
         shotArr = shotDetection.p1shotArr
     elif player == 2:
-        enemyShipArr = p1shipArr
+        enemyShipArr = shipPlacement.p1shipArr
         shotArr = shotDetection.p2shotArr
     print("  A B C D E F G H I J")
     for i in range(0, 10):
@@ -27,10 +29,10 @@ def printTopMap(player):
 #print bottom map - 'X' denotes ship placement, '*' denotes hit ship, '^' denotes area not fired upon by enemy
 def printBottomMap(player):
     if player == 1:
-        shipArr = p1shipArr
+        shipArr = shipPlacement.p1shipArr
         shotArr = shotDetection.p2shotArr
     elif player == 2:
-        shipArr = p2shipArr
+        shipArr = shipPlacement.p2shipArr
         shotArr = shotDetection.p1shotArr
     print("  A B C D E F G H I J")
     for i in range(0, 10):
@@ -68,32 +70,6 @@ def run(shipCount):
             player = 1
         #check for win condition
         #clear screen and tell players to switch
-
-p1shipArr = [
-             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            ]
-
-p2shipArr = [
-             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            ]
 
 shipCount = 5
 
