@@ -8,8 +8,8 @@ def printTopMap(player):
     else:
         shipArr = p2shipArr
         shotArr = p2shotArr
-    for i in range(0, 10):
-        for j in range(0, 10):
+    for i in range(0, 9):
+        for j in range(0, 9):
             if shotArr[i][j] == 0:
                 print("^", end ="")
             elif shotArr[i][j] == 1 and shipArr[i][j] == 0:
@@ -27,8 +27,8 @@ def printBottomMap(player):
     else:
         shipArr = p2shipArr
         shotArr = p1shotArr
-    for i in range(0, 10):
-        for j in range(0, 10):
+    for i in range(0, 9):
+        for j in range(0, 9):
             if shipArr[i][j] == 0:
                 print("^", end ="")
             elif shotArr[i][j] == 1 and shipArr[i][j] == 1:
@@ -56,9 +56,6 @@ def run(shipCount):
         #check for win condition
         #clear screen and tell players to switch
 
-
-
-
 p1shotArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -85,9 +82,6 @@ p1shipArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
 
-
-
-
 p2shotArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -113,8 +107,6 @@ p2shipArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
-
-
 
 shipCount = 5
 
