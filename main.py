@@ -3,18 +3,18 @@ import shotDetection
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
 def printTopMap(player):
     if player == 1:
-        shipArr = p1shipArr
+        enemyShipArr = p2shipArr
         shotArr = p1shotArr
-    else:
-        shipArr = p2shipArr
+    elif player == 2:
+        enemyShipArr = p1shipArr
         shotArr = p2shotArr
     for i in range(0, 9):
         for j in range(0, 9):
             if shotArr[i][j] == 0:
                 print("^", end ="")
-            elif shotArr[i][j] == 1 and shipArr[i][j] == 0:
+            elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 0:
                 print("O", end ="")
-            elif shotArr[i][j] == 1 and shipArr[i][j] == 1:
+            elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 1:
                 print("X", end ="")
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
@@ -24,7 +24,7 @@ def printBottomMap(player):
     if player == 1:
         shipArr = p1shipArr
         shotArr = p2shotArr
-    else:
+    elif player == 2:
         shipArr = p2shipArr
         shotArr = p1shotArr
     for i in range(0, 9):
