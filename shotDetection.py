@@ -1,8 +1,8 @@
 #Name: Caden Kroonenberg
 import main
 #user shot selection
-def shot(player: bool):
-    if(player):
+def shot(player):
+    if player == 1:
         shotArr = main.p1shotArr
         shipArr = main.p2shipArr
     else:
