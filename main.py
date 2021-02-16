@@ -51,9 +51,15 @@ def printBottomMap(player):
         print()
 
 def run(shipCount):
-    endGame = 0
+    endGame = False
     player = 1
-    #shipPlacement for shipCount amount of ships
+    
+    print("Player 1:")
+    shipPlacement.placeShip(player, shipCount)
+    player = 2
+    print("Player 2:")
+    shipPlacement.placeShip(player, shipCount)
+    player = 1
 
     while not endGame:
         if player == 1:
@@ -64,12 +70,16 @@ def run(shipCount):
         print()
         printBottomMap(player)
         shotDetection.shot(player)
+        #
+        #check for win condition
+        #
         if player == 1:
             player = 2
         elif player == 2:
             player = 1
-        #check for win condition
+        #
         #clear screen and tell players to switch
+        #
 
 shipCount = 5
 

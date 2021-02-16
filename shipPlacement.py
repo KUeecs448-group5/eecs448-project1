@@ -1,11 +1,11 @@
 #Name: Jiacheng Chen
 
 p1shipArr = [
-             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -14,11 +14,11 @@ p1shipArr = [
             ]
 
 p2shipArr = [
-             [1, 1, 1, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 1, 0, 0, 0, 0, 0, 1, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -26,9 +26,7 @@ p2shipArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
 
-import main
- 
- def canonicalizeParts(parts):
+def canonicalizeParts(parts):
      parts1 = sorted(parts, key=lambda part: part[0])
      parts2 = sorted(parts1, key=lambda part: part[1])
      return parts2
@@ -81,7 +79,7 @@ def placeShip(player, shipCount):
     parts = canonicalizeParts(parts)
     if not isAdjacent(parts):
             raise Exception()
-    if player:
+    if player == 1:
         #Player 1
         if overlaps(parts, p1shipArr):
             raise Exception()
