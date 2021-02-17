@@ -70,17 +70,23 @@ def run(shipCount):
         print()
         printBottomMap(player)
         shotDetection.shot(player)
-        #
-        #check for win condition
-        #
+    
+        #check win condition and switch players if not
         if player == 1:
-            player = 2
+            if shotDetection.p1shotArr == shipPlacement.p2shipArr:
+                endGame = True
+                print("\nPlayer 1 Wins!\n")
+            else:
+                player = 2
+                print(chr(27) + "[2J")
         elif player == 2:
-            player = 1
-        #
-        #clear screen and tell players to switch
-        #
+            if shotDetection.p2shotArr == shipPlacement.p1shipArr:
+                endGame = True
+                print("\nPlayer 2 Wins!\n")
+            else:
+                player = 1
+                print(chr(27) + "[2J")
 
-shipCount = 5
+shipCount = 1
 
 run(shipCount)

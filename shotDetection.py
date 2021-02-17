@@ -1,7 +1,7 @@
 #Name: Caden Kroonenberg
 #user shot selection
 
-import shipPlacement
+import shipPlacement, time
 
 p1shotArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -42,7 +42,6 @@ def shot(player):
     while repeat == True:
         repeat = False
         xChar = input('Enter a column [A-J] to fire upon: ')
-        print("xChar:", xChar)
         if xChar == "A" or xChar == "a":
             xCoord = 0
         elif xChar == "B" or xChar == "b":
@@ -66,14 +65,36 @@ def shot(player):
         else:
             print("Invalid input. Try again")
             repeat = True
-    yCoord = int(input('Enter a row [1-10] to fire upon: '))
-    yCoord = yCoord - 1
+
+    repeat = True
+    while repeat == True:
+        repeat = False
+        yCoord = int(input('Enter a row [1-10] to fire upon: '))
+        yCoord = yCoord - 1
+        if yCoord > 9 or yCoord < 0:
+            print("Invalid input. Try again")
+            repeat = True
+
 
     #register shot
     shotArr[yCoord][xCoord] = 1
 
     #shot feedback
     if enemyShipArr[yCoord][xCoord] == shotArr[yCoord][xCoord]:
+        print(chr(27) + "[2J")
+        if player == 1:
+            print("Player 1: ", end="")
+        else:
+            print("Player 2: ", end="")
         print("Shot hit!")
+        time.sleep(3)
+        print(chr(27) + "[2J")
     else:
+        print(chr(27) + "[2J")
+        if player == 1:
+            print("Player 1: ", end="")
+        else:
+            print("Player 2: ", end="")
         print("Shot missed.")
+        time.sleep(3)
+        print(chr(27) + "[2J")
