@@ -87,6 +87,14 @@ def run(shipCount):
                 player = 1
                 print(chr(27) + "[2J")
 
-shipCount = 1
+print("\nBATTLESHIP\n")
+
+repeat = True
+while repeat == True:
+        repeat = False
+        shipCount = int(input("Enter ship count [1-5]: "))
+        if shipCount > 5 or shipCount < 1:
+            print("Invalid input. Try again")
+            repeat = True
 
 run(shipCount)
