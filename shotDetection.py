@@ -87,7 +87,7 @@ def shot(player):
         else:
             print("Player 2: ", end="")
         print("Shot hit!")
-        time.sleep(3)
+        time.sleep(2)
         print(chr(27) + "[2J")
     else:
         print(chr(27) + "[2J")
@@ -96,5 +96,5 @@ def shot(player):
         else:
             print("Player 2: ", end="")
         print("Shot missed.")
-        time.sleep(3)
+        time.sleep(2)
         print(chr(27) + "[2J")
