@@ -73,8 +73,37 @@ def placeShip(player, shipCount):
     parts = []
     for shipBodyPart in range(1, shipCount +1):
         print('Place the #' + str(shipBodyPart) + 'of' + str(shipCount) + 'of the ship')
-        xCoord = int(input('Enter a X coordinate of the new ship to place: '))
-        yCoord = int(input('Enter a Y coordinate of the new ship to place: '))
+        #A-J and 1-10 notation for consistency
+        repeat = True
+        while repeat == True:
+            repeat = False
+            xChar = input('Enter a column [A-J] to fire upon: ')
+            print("xChar:", xChar)
+            if xChar == "A" or xChar == "a":
+                xCoord = 0
+            elif xChar == "B" or xChar == "b":
+                xCoord = 1
+            elif xChar == "C" or xChar == "c":
+                xCoord = 2
+            elif xChar == "D" or xChar == "d":
+                xCoord = 3
+            elif xChar == "E" or xChar == "e":
+                xCoord = 4
+            elif xChar == "F" or xChar == "f":
+                xCoord = 5
+            elif xChar == "G" or xChar == "g":
+                xCoord = 6
+            elif xChar == "H" or xChar == "h":
+                xCoord = 7
+            elif xChar == "I" or xChar == "i":
+                xCoord = 8
+            elif xChar == "J" or xChar == "j":
+                xCoord = 9
+            else:
+                print("Invalid input. Try again")
+                repeat = True
+        yCoord = int(input('Enter a row [1-10] to fire upon: '))
+        yCoord = yCoord - 1
         parts.append((xCoord, yCoord))
     parts = canonicalizeParts(parts)
     if not isAdjacent(parts):
