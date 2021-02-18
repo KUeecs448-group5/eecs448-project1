@@ -27,10 +27,6 @@ p2shipArr = [
             ]
 playArr = [p1shipArr,p2shipArr]
 
-#declairing the coordinate variables outside of a definition so they have a larger scope.
-xCoord = 0
-yCoord = 0
-face = 0
 
 #made userInput function, so it can easily be called again in the event of a misplaced ship
 def userInput(i):
@@ -80,7 +76,7 @@ def userInput(i):
       else:
         repeat = False
     yCoord = int(yChar) - 1 #change to 0-9
-
+    return xCoord,yCoord,face
 
 def shipDefiner(x,y,z,t,p):#looks at the request space, if avalible places ship and returns true, otherwisr returns falce
 #x,y,z,t,p = xCoord, yCoord, orientation, size, player
@@ -91,31 +87,35 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if avalible places ship 
   if z == 1: #check vertical hang off
     if (y + t - 1) > 9:
       return False
-  if playArr[p][x][y] != 0: #check if first node is occupied
+  if playArr[p][y][x] != 0: #check if first node is occupied
     return False
   if z == 0: #check horizontal occupied
     for i in range(1,t): #should run from 1 to t-1
-      if playArr[p][x+i][y] != 0:
+      if playArr[p][y][x+i] != 0:
         return False
     for i in range(0,t): #if it runs this for loop, the ship is in a valid position and the array can be changed
-      playArr[p][x+i][y] = t #using t as a unique marker for each ship
+      playArr[p][y][x+i] = t #using t as a unique marker for each ship
   if z == 1: #same thing for vertical
     for i in range(1,t): #should run from 1 to t-1
-      if playArr[p][x][y+i] != 0:
+      if playArr[p][y+i][x] != 0:
         return False
     for i in range(0,t):
-      playArr[p][x][y+i] = t 
+      playArr[p][y+i][x] = t 
+  print(p2shipArr)
   return True    
 
 #call to place all ships for one player
 def placeShip(player, shipCount):
   #player 1 = 0, player 2 = 1
   for i in range(1, shipCount+1): #i = size of ship curently placing
-    userInput(i)#fetch orientation and coordinates
-    test = shipDefiner(xCoord,yCoord,face,i,player)
-    while test == False: #run it again if placement failed
+    input = userInput(i)#fetch orientation and coordinates
+    xVar,yVar,fVar = input
+    print(xVar,yVar,fVar,i,player)
+    test = shipDefiner(xVar,yVar,fVar,i,player)
+    while test == False: #run it again if placement failed it wont exit this loop, but it enters it correctly.
       print('Your Ship failed to be placed, please verify you are placing your ship in a valid location. Restarting the process.')
+      print(p2shipArr)
       userInput(i)
-      test = shipDefiner(xCoord,yCoord,face,i,player)
+      test = shipDefiner(xVar,yVar,fVar,i,player)
 
-placeShip(0,6)
+placeShip(1,6)
