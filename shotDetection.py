@@ -1,7 +1,7 @@
 #Name: Caden Kroonenberg
 #user shot selection
 
-import shipPlacement, time
+import shipPlacement2, time
 
 p1shotArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -32,10 +32,10 @@ p2shotArr = [
 def shot(player):
     if player == 1:
         shotArr = p1shotArr
-        enemyShipArr = shipPlacement.p2shipArr
+        enemyShipArr = shipPlacement2.p2shipArr
     else:
         shotArr = p2shotArr
-        enemyShipArr = shipPlacement.p1shipArr
+        enemyShipArr = shipPlacement2.p1shipArr
     
     #shot selection
     repeat = True
