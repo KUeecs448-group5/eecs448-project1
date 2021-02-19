@@ -19,7 +19,7 @@ def printTopMap(player):
                 print("^", end =" ")
             elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 0:
                 print("O", end =" ")
-            elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 1:
+            elif shotArr[i][j] == 1 and not enemyShipArr[i][j] == 0:
                 print("X", end =" ")
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
@@ -41,9 +41,9 @@ def printBottomMap(player):
         for j in range(0, 10):
             if shipArr[i][j] == 0:
                 print("^", end =" ")
-            elif shotArr[i][j] == 1 and shipArr[i][j] == 1:
+            elif shotArr[i][j] == 1 and not shipArr[i][j] == 0:
                 print("*", end =" ")
-            elif shotArr[i][j] == 0 and shipArr[i][j] == 1:
+            elif shotArr[i][j] == 0 and not shipArr[i][j] == 0:
                 print("X", end =" ")
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
