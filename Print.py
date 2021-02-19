@@ -1,4 +1,5 @@
 import shipPlacement2, shotDetection
+from termcolor import colored
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
 def printTopMap(player):
@@ -16,11 +17,11 @@ def printTopMap(player):
             print(i+1, end="")
         for j in range(0, 10):
             if shotArr[i][j] == 0:
-                print("^", end =" ")
+                print(colored("^", 'blue'), end =" ")
             elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 0:
                 print("O", end =" ")
             elif shotArr[i][j] == 1 and not enemyShipArr[i][j] == 0:
-                print("X", end =" ")
+                print(colored("X", 'red'), end =" ")
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
 
@@ -40,10 +41,10 @@ def printBottomMap(player):
             print(i+1, end="")
         for j in range(0, 10):
             if shipArr[i][j] == 0:
-                print("^", end =" ")
+                print(colored("^", 'blue'), end =" ")
             elif shotArr[i][j] == 1 and not shipArr[i][j] == 0:
-                print("*", end =" ")
+                print(colored("*", 'red'), end =" ")
             elif shotArr[i][j] == 0 and not shipArr[i][j] == 0:
-                print("X", end =" ")
+                print(colored("X", 'white'), end =" ")
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
