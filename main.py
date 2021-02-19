@@ -48,8 +48,8 @@ def run(shipCount):
                 print(chr(27) + "[2J")
 
 print(chr(27) + "[2J")
-print(colored("\nBATTLESHIP\n", 'blue'))
-
+print(colored("BATTLESHIP", 'blue', 'on_grey'))
+print()
 repeat = True
 while repeat == True:
         repeat = False
