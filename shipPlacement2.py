@@ -101,7 +101,6 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if avalible places ship 
         return False
     for i in range(0,t):
       playArr[p][y+i][x] = t 
-  print(p2shipArr)
   return True    
 
 #call to place all ships for one player
@@ -110,12 +109,9 @@ def placeShip(player, shipCount):
   for i in range(1, shipCount+1): #i = size of ship curently placing
     input = userInput(i)#fetch orientation and coordinates
     xVar,yVar,fVar = input
-    print(xVar,yVar,fVar,i,player)
     test = shipDefiner(xVar,yVar,fVar,i,player)
-    while test == False: #run it again if placement failed it wont exit this loop, but it enters it correctly.
+    while test == False: #run it again if placement failed 
       print('Your Ship failed to be placed, please verify you are placing your ship in a valid location. Restarting the process.')
-      print(p2shipArr)
-      userInput(i)
+      input = userInput(i)
+      xVar,yVar,fVar = input
       test = shipDefiner(xVar,yVar,fVar,i,player)
-
-placeShip(1,6)
