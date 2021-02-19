@@ -1,0 +1,23 @@
+Project 1 Expected total hours: 30
+
+2/14
+1 hour - Caden - Team logisitics (Discord, GitHub, Team Contract)
+3 hours - Caden - Shot detection and selection module initial implementation (including Python tutorials)
+0.5 hours - Wesley - Python tutorials
+
+2/15
+0.5 hours - Wesley - Python tutorials and work on ship object
+
+2/16
+8 hours - Chen - Ship placement module initial implementation
+2 hours - Caden - Bug fixes and general improvements to shot detection and selection module
+
+2/17
+2 hours - Caden - Various fixes to main module and ship placement module
+2 hours - Wesley - Various fixes to ship placement module
+
+2/18
+2.5 hours - Wesley - Ship placement second implementation
+
+2/19
+1 hour - Caden - Documentation
