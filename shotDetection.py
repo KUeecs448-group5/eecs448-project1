@@ -75,12 +75,12 @@ def shot(player):
     while repeat == True:
         repeat = False
         yCoord = input('Enter a row [1-10] to fire upon: ')
-        yCoord = yCoord - 1
-        if yCoord > 9 or yCoord < 0:
+        if int(yCoord) > 9 or int(yCoord) < 0:
             print("Invalid input (out of [1-10] range). Try again")
             repeat = True
         elif not yCoord.isnumeric():
             print("Invalid input (not an integer). Try again")
+        yCoord = int(yCoord) - 1
 
 
     #register shot
@@ -100,7 +100,6 @@ def shot(player):
         print("Shot hit!")
         shipPlacement2.objArr[player-1][enemyShipArr[yCoord][xCoord] - 1].hit() #register hit in ship object
         input("Switch players then press Enter to continue...")
-            
         print(chr(27) + "[2J")
     else:
         print(chr(27) + "[2J")

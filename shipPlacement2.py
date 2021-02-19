@@ -34,7 +34,6 @@ playArr = [p1shipArr,p2shipArr]
 
 #made userInput function, so it can easily be called again in the event of a misplaced ship
 def userInput(i):
-    print()
     print('Placing Size ' + str(i) + ' Ship')
     if not i == 1:
       orient = input('Horizontal or Vertical?(H/V): ')#code for verifing valid h or v for orientation
@@ -119,7 +118,7 @@ objArr = [[], []] #player, size-1
 #call to place all ships for one player
 def placeShip(player, shipCount):
   #player 1 = 0, player 2 = 1
-  for i in range(1, shipCount+1): #i = size of ship curently placing
+  for i in range(1, int(shipCount)+1): #i = size of ship curently placing
     input = userInput(i)#fetch orientation and coordinates
     xVar,yVar,fVar = input
     test = shipDefiner(xVar,yVar,fVar,i,player)
@@ -128,5 +127,9 @@ def placeShip(player, shipCount):
       input = userInput(i)
       xVar,yVar,fVar = input
       test = shipDefiner(xVar,yVar,fVar,i,player)
-    objArr[player].append(Ship(i,player)) #check indices
-  #print ship map
+    objArr[player].append(Ship(i,player))
+    print()
+    print("Current ship placement:")
+    Print.printBottomMap(player + 1)
+    print()
+  
