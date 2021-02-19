@@ -1,5 +1,8 @@
 #Name: Jiacheng Chen
 #Name: Wesley Sportsman
+
+import Print
+
 p1shipArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -30,16 +33,23 @@ playArr = [p1shipArr,p2shipArr]
 
 #made userInput function, so it can easily be called again in the event of a misplaced ship
 def userInput(i):
+    print()
     print('Placing Size ' + str(i) + ' Ship')
-    orient = input('Horizontal or Vertical?(H/V): ')#code for verifing valid h or v for orientation
-    while not((orient == 'H') or (orient == 'V') or (orient == 'h') or (orient == 'v')):
-      orient = input('Invalid Character Please Enter "H" or "V": ')
-    if orient == "H" or orient == "h":#convert orient into a number, 0 is horizontal, 1 is vertical
-      face = 0
-    elif orient == "V" or orient == "v":
-      face = 1
-    print("Please give the leftmost/topmost node of your ship")
-    xChar = input('Which column [A-J]?: ') #code for x coordinate
+    if not i == 1: #will not ask for orientation on size 1 ship
+      orient = input('Horizontal or Vertical?(H/V): ')#code for verifing valid h or v for orientation
+      while not((orient == 'H') or (orient == 'V') or (orient == 'h') or (orient == 'v')):
+        orient = input('Invalid Character Please Enter "H" or "V": ')
+      if orient == "H" or orient == "h":#convert orient into a number, 0 is horizontal, 1 is vertical
+        face = 0
+      elif orient == "V" or orient == "v":
+        face = 1
+      if face:
+        print("Please give the topmost node of the ship")
+      else:
+        print("Please give the leftmost node of the ship")
+    else:
+      face = 0 #for size 1 ship, orientation is redundant
+    xChar = input('Column [A-J]?: ') #code for x coordinate
     repeat = True
     while repeat == True:
       repeat = False
@@ -66,7 +76,7 @@ def userInput(i):
       else:
         xChar = input('Invalid input. Please enter a valid column [A-J]: ')
         repeat = True
-    yChar = input('Which Row [1-10]?: ') #user input for y
+    yChar = input('Row [1-10]?: ') #user input for y
     repeat = True
     while repeat == True:
       if not yChar.isnumeric(): #make sure it is a number
