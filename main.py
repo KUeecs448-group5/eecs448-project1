@@ -27,14 +27,14 @@ def run(shipCount):
     
         #check win condition and switch players if not
         if player == 1:
-            if shotDetection.p1shotArr == shipPlacement2.p2shipArr:
+            if shotDetection.p1shotCount >= winCount:
                 endGame = True
                 print("\nPlayer 1 Wins!\n")
             else:
                 player = 2
                 print(chr(27) + "[2J")
         elif player == 2:
-            if shotDetection.p2shotArr == shipPlacement2.p1shipArr:
+            if shotDetection.p2shotCount == winCount:
                 endGame = True
                 print("\nPlayer 2 Wins!\n")
             else:
@@ -50,5 +50,8 @@ while repeat == True:
         if shipCount > 5 or shipCount < 1:
             print("Invalid input. Try again")
             repeat = True
+        winCount = 0
+        for i in range(1,shipCount+1):
+          winCount = winCount + i
 
 run(shipCount)
