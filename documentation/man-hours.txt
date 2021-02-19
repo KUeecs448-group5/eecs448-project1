@@ -1,12 +1,26 @@
 Project 1 Expected total hours: 30
 
+2/10
+2 hours - Caden - Create Discord server and Python tutorials
+
+2/11
+3 hours - Caden - Shot detection and selection module initial implementation
+1 hour - Caden - Team logisitics (Create GitHub repo, Team Contract)
+
+2/12
+1 hour - Caden - Create Django project to implement web app UI
+2 hours - Caden - Main module initial implementation
+
+2/13
+2 hours - Steven - Create front end HTML code
+
 2/14
-1 hour - Caden - Team logisitics (Discord, GitHub, Team Contract)
-3 hours - Caden - Shot detection and selection module initial implementation (including Python tutorials)
 0.5 hours - Wesley - Python tutorials
+0.5 hours - Steven - Main module improvements
 
 2/15
-0.5 hours - Wesley - Python tutorials and work on ship object
+1 hour - Wesley - Python tutorials and work on ship object
+3 hours - Caden - Improve UI functions in main module
 
 2/16
 8 hours - Chen - Ship placement module initial implementation
@@ -18,6 +32,7 @@ Project 1 Expected total hours: 30
 
 2/18
 2.5 hours - Wesley - Ship placement second implementation
+0.5 hours - Chen - Ship placement functions
 
 2/19
 1 hour - Caden - Documentation
