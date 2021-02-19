@@ -114,12 +114,11 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if avalible places ship 
       playArr[p][y+i][x] = t 
   return True    
 
-objArr = []
+objArr = [[], []] #player, size-1
 
 #call to place all ships for one player
 def placeShip(player, shipCount):
   #player 1 = 0, player 2 = 1
-  objArr = [[], []]
   for i in range(1, shipCount+1): #i = size of ship curently placing
     input = userInput(i)#fetch orientation and coordinates
     xVar,yVar,fVar = input
@@ -129,5 +128,5 @@ def placeShip(player, shipCount):
       input = userInput(i)
       xVar,yVar,fVar = input
       test = shipDefiner(xVar,yVar,fVar,i,player)
-  objArr[player][i] = Ship(i, player) #check indices
+    objArr[player].append(Ship(i,player)) #check indices
   #print ship map
