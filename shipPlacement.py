@@ -125,3 +125,43 @@ def placeShip(player, shipCount):
         if overlaps(parts, p2shipArr):
             raise Exception()
         placeBody(parts, p2shipArr)
+
+    #Vertical
+    if orientation == "Vertical"
+        if xCoord >= 0 and xCood + 2 < len(part)
+            if yCoord >= 0 and yCoord < len(part)
+                if p1shipArr[xCoord][yCoord] != "1" and p1shipArr[xCoord+1][yCoord] != "1" and p1shipArr[xCoord+2][yCoord] != "1":
+                    player 1.part(orientation, xCoord, yCoord,p1shipArr)
+                    shipcount = shipcount - 1
+                    if shipcount == 0:
+                        break
+                    else:
+                        player 1. show_ship(shipcount, p1shipArr)
+                else:
+                    print("Enter another Coord: ")
+            else:
+                print("y coordinate out of bounds, enter y Coord: ")
+        else:
+            print("x coordinate out of bounds, enter x Coord: ")
+
+    #Horizontal
+    if orientation == "Horizontal"
+        if xCoord >= 0 and xCood + 2 < len(part)
+            if yCoord >= 0 and yCoord < len(part)
+                if p1shipArr[xCoord][yCoord] != "1" and p1shipArr[xCoord+1][yCoord] != "1" and p1shipArr[xCoord+2][yCoord] != "1":
+                    player 1.part(orientation, xCoord, yCoord,p1shipArr)
+                    shipcount = shipcount - 1
+                    if shipcount == 0:
+                        break
+                    else:
+                        player 1. show_ship(shipcount, p1shipArr)
+                else:
+                    print("Enter another Coord: ")
+            else:
+                print("y coordinate out of bounds, enter y Coord: ")
+        else:
+            print("x coordinate out of bounds, enter x Coord: ")
+            
+    #Neither vertical nor horizontal
+    if orientation != "Vertical" and orientation == "Horizontal"
+        print("Invalid orientation, enter Vertical or Horizontal: ")
