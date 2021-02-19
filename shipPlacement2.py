@@ -2,6 +2,7 @@
 #Name: Wesley Sportsman
 
 import Print
+from shipObject import Ship
 
 p1shipArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -35,7 +36,7 @@ playArr = [p1shipArr,p2shipArr]
 def userInput(i):
     print()
     print('Placing Size ' + str(i) + ' Ship')
-    if not i == 1: #will not ask for orientation on size 1 ship
+    if not i == 1:
       orient = input('Horizontal or Vertical?(H/V): ')#code for verifing valid h or v for orientation
       while not((orient == 'H') or (orient == 'V') or (orient == 'h') or (orient == 'v')):
         orient = input('Invalid Character Please Enter "H" or "V": ')
@@ -48,7 +49,7 @@ def userInput(i):
       else:
         print("Please give the leftmost node of the ship")
     else:
-      face = 0 #for size 1 ship, orientation is redundant
+      face = 1
     xChar = input('Column [A-J]?: ') #code for x coordinate
     repeat = True
     while repeat == True:
@@ -113,9 +114,12 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if avalible places ship 
       playArr[p][y+i][x] = t 
   return True    
 
+objArr = []
+
 #call to place all ships for one player
 def placeShip(player, shipCount):
   #player 1 = 0, player 2 = 1
+  objArr = [[], []]
   for i in range(1, shipCount+1): #i = size of ship curently placing
     input = userInput(i)#fetch orientation and coordinates
     xVar,yVar,fVar = input
@@ -125,3 +129,5 @@ def placeShip(player, shipCount):
       input = userInput(i)
       xVar,yVar,fVar = input
       test = shipDefiner(xVar,yVar,fVar,i,player)
+  objArr[player][i] = Ship(i, player) #check indices
+  #print ship map
