@@ -1,6 +1,7 @@
 #Name: Caden Kroonenberg
 
 import Print, shotDetection, shipPlacement2
+from termcolor import colored
 
 def run(shipCount):
     endGame = False
@@ -8,12 +9,17 @@ def run(shipCount):
     
     print()
     print("Player 1:")
+    print()
     shipPlacement2.placeShip(0, shipCount)
     player = 2
-    print()
+    input("Press Enter and then switch players to continue...")
+    print(chr(27) + "[2J")
     print("Player 2:")
+    print()
     shipPlacement2.placeShip(1, shipCount)
     player = 1
+    input("Press Enter and then switch players to continue...")
+    print(chr(27) + "[2J")
 
     while not endGame:
         if player == 1:
@@ -42,7 +48,7 @@ def run(shipCount):
                 print(chr(27) + "[2J")
 
 print(chr(27) + "[2J")
-print("\nBATTLESHIP\n")
+print(colored("\nBATTLESHIP\n", 'blue'))
 
 repeat = True
 while repeat == True:
@@ -51,11 +57,11 @@ while repeat == True:
         if not shipCount.isnumeric():
             print("Invalid input (not an integer). Try again")
             repeat = True
-        elif shipCount > 6 or shipCount < 1:
+        elif int(shipCount) > 6 or int(shipCount) < 1:
             print("Invalid input. Try again")
             repeat = True
         winCount = 0
-        for i in range(1,shipCount+1):
+        for i in range(1,int(shipCount)+1):
           winCount = winCount + i
 
 run(shipCount)
