@@ -37,3 +37,5 @@ Daily hours logged in dedicated Discord text channel
 
 2/19
 1 hour - Caden - Documentation
+2 hours - Caden - Improvements to main, ship placement, and shot object
+0.5 hours - Caden - Implement termcolor files
