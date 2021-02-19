@@ -9,3 +9,6 @@ https://stackoverflow.com/questions/855493/referenced-before-assignment-error-in
 
 Updated pause function which waits for user input:
 https://stackoverflow.com/questions/983354/how-to-make-a-script-wait-for-a-pressed-key
+
+Check if integer input is an integer:
+https://stackoverflow.com/questions/5424716/how-to-check-if-string-input-is-a-number
