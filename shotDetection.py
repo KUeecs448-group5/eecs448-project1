@@ -78,16 +78,18 @@ def shot(player):
 
     #register shot
     shotArr[yCoord][xCoord] = 1
-
+    
     #shot feedback
-    if enemyShipArr[yCoord][xCoord] == shotArr[yCoord][xCoord]:
+    if not enemyShipArr[yCoord][xCoord] == 0 and not shotArr[yCoord][xCoord] == 0:
         print(chr(27) + "[2J")
         if player == 1:
             print("Player 1: ", end="")
         else:
             print("Player 2: ", end="")
         print("Shot hit!")
+        shipPlacement2.objArr[player-1][enemyShipArr[yCoord][xCoord] - 1].hit() #register hit in ship object
         time.sleep(2)
+            
         print(chr(27) + "[2J")
     else:
         print(chr(27) + "[2J")
