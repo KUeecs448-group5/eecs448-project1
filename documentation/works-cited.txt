@@ -1,0 +1,5 @@
+function which pauses code momentarily:
+https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
+
+function which clears terminal screen:
+https://stackoverflow.com/questions/2084508/clear-terminal-in-python
