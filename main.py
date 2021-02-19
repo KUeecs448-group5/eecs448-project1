@@ -1,14 +1,14 @@
 #Name: Caden Kroonenberg
 
-import shotDetection, shipPlacement
+import shotDetection, shipPlacement2
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
 def printTopMap(player):
     if player == 1:
-        enemyShipArr = shipPlacement.p2shipArr
+        enemyShipArr = shipPlacement2.p2shipArr
         shotArr = shotDetection.p1shotArr
     elif player == 2:
-        enemyShipArr = shipPlacement.p1shipArr
+        enemyShipArr = shipPlacement2.p1shipArr
         shotArr = shotDetection.p2shotArr
     print("  A B C D E F G H I J")
     for i in range(0, 10):
@@ -29,10 +29,10 @@ def printTopMap(player):
 #print bottom map - 'X' denotes ship placement, '*' denotes hit ship, '^' denotes area not fired upon by enemy
 def printBottomMap(player):
     if player == 1:
-        shipArr = shipPlacement.p1shipArr
+        shipArr = shipPlacement2.p1shipArr
         shotArr = shotDetection.p2shotArr
     elif player == 2:
-        shipArr = shipPlacement.p2shipArr
+        shipArr = shipPlacement2.p2shipArr
         shotArr = shotDetection.p1shotArr
     print("  A B C D E F G H I J")
     for i in range(0, 10):
@@ -55,10 +55,10 @@ def run(shipCount):
     player = 1
     
     print("Player 1:")
-    shipPlacement.placeShip(player, shipCount)
+    shipPlacement2.placeShip(player, shipCount)
     player = 2
     print("Player 2:")
-    shipPlacement.placeShip(player, shipCount)
+    shipPlacement2.placeShip(player, shipCount)
     player = 1
 
     while not endGame:
@@ -73,14 +73,14 @@ def run(shipCount):
     
         #check win condition and switch players if not
         if player == 1:
-            if shotDetection.p1shotArr == shipPlacement.p2shipArr:
+            if shotDetection.p1shotArr == shipPlacement2.p2shipArr:
                 endGame = True
                 print("\nPlayer 1 Wins!\n")
             else:
                 player = 2
                 print(chr(27) + "[2J")
         elif player == 2:
-            if shotDetection.p2shotArr == shipPlacement.p1shipArr:
+            if shotDetection.p2shotArr == shipPlacement2.p1shipArr:
                 endGame = True
                 print("\nPlayer 2 Wins!\n")
             else:
