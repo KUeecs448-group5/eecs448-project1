@@ -74,11 +74,13 @@ def shot(player):
     repeat = True
     while repeat == True:
         repeat = False
-        yCoord = int(input('Enter a row [1-10] to fire upon: '))
+        yCoord = input('Enter a row [1-10] to fire upon: ')
         yCoord = yCoord - 1
         if yCoord > 9 or yCoord < 0:
-            print("Invalid input. Try again")
+            print("Invalid input (out of [1-10] range). Try again")
             repeat = True
+        elif not yCoord.isnumeric():
+            print("Invalid input (not an integer). Try again")
 
 
     #register shot
