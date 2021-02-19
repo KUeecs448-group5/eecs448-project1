@@ -1,4 +1,5 @@
 Project 1 Expected total hours: 30
+Daily hours logged in dedicated Discord text channel
 
 2/10
 2 hours - Caden - Create Discord server and Python tutorials
