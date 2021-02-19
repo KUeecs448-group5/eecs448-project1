@@ -1,64 +1,18 @@
 #Name: Caden Kroonenberg
 
-import shotDetection, shipPlacement2
-
-#print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
-def printTopMap(player):
-    if player == 1:
-        enemyShipArr = shipPlacement2.p2shipArr
-        shotArr = shotDetection.p1shotArr
-    elif player == 2:
-        enemyShipArr = shipPlacement2.p1shipArr
-        shotArr = shotDetection.p2shotArr
-    print("  A B C D E F G H I J")
-    for i in range(0, 10):
-        if(i < 9):
-            print("", i+1, end="")
-        else:
-            print(i+1, end="")
-        for j in range(0, 10):
-            if shotArr[i][j] == 0:
-                print("^", end =" ")
-            elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 0:
-                print("O", end =" ")
-            elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 1:
-                print("X", end =" ")
-            #elif statement for sunk ship - #; requires isSunk() function and ship object
-        print()
-
-#print bottom map - 'X' denotes ship placement, '*' denotes hit ship, '^' denotes area not fired upon by enemy
-def printBottomMap(player):
-    if player == 1:
-        shipArr = shipPlacement2.p1shipArr
-        shotArr = shotDetection.p2shotArr
-    elif player == 2:
-        shipArr = shipPlacement2.p2shipArr
-        shotArr = shotDetection.p1shotArr
-    print("  A B C D E F G H I J")
-    for i in range(0, 10):
-        if(i < 9):
-            print("", i+1, end="")
-        else:
-            print(i+1, end="")
-        for j in range(0, 10):
-            if shipArr[i][j] == 0:
-                print("^", end =" ")
-            elif shotArr[i][j] == 1 and shipArr[i][j] == 1:
-                print("*", end =" ")
-            elif shotArr[i][j] == 0 and shipArr[i][j] == 1:
-                print("X", end =" ")
-            #elif statement for sunk ship - #; requires isSunk() function and ship object
-        print()
+import Print, shotDetection, shipPlacement2
 
 def run(shipCount):
     endGame = False
     player = 1
     
+    print()
     print("Player 1:")
-    shipPlacement2.placeShip(player, shipCount)
+    shipPlacement2.placeShip(0, shipCount)
     player = 2
+    print()
     print("Player 2:")
-    shipPlacement2.placeShip(player, shipCount)
+    shipPlacement2.placeShip(1, shipCount)
     player = 1
 
     while not endGame:
@@ -66,9 +20,9 @@ def run(shipCount):
             print("Player 1:")
         elif player == 2:
             print("Player 2:")
-        printTopMap(player)
+        Print.printTopMap(player)
         print()
-        printBottomMap(player)
+        Print.printBottomMap(player)
         shotDetection.shot(player)
     
         #check win condition and switch players if not
