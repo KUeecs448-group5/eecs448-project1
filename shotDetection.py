@@ -3,6 +3,9 @@
 
 import shipPlacement2, time
 
+p1shotCount = 0
+p2shotCount = 0
+
 p1shotArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
@@ -28,6 +31,8 @@ p2shotArr = [
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
+
+
 
 def shot(player):
     if player == 1:
@@ -84,11 +89,15 @@ def shot(player):
         print(chr(27) + "[2J")
         if player == 1:
             print("Player 1: ", end="")
-        else:
+            global p1shotCount
+            p1shotCount = p1shotCount + 1
+        elif player == 2:
+            global p2shotCount
+            p2shotCount = p2shotCount + 1
             print("Player 2: ", end="")
         print("Shot hit!")
         shipPlacement2.objArr[player-1][enemyShipArr[yCoord][xCoord] - 1].hit() #register hit in ship object
-        time.sleep(2)
+        input("Switch players then press Enter to continue...")
             
         print(chr(27) + "[2J")
     else:
@@ -98,5 +107,5 @@ def shot(player):
         else:
             print("Player 2: ", end="")
         print("Shot missed.")
-        time.sleep(2)
+        input("Switch players then press Enter to continue...")
         print(chr(27) + "[2J")
