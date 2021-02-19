@@ -3,3 +3,9 @@ https://www.pythoncentral.io/pythons-time-sleep-pause-wait-sleep-stop-your-code/
 
 function which clears terminal screen:
 https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+
+Bug fix for variable assignment:
+https://stackoverflow.com/questions/855493/referenced-before-assignment-error-in-python
+
+Updated pause function which waits for user input:
+https://stackoverflow.com/questions/983354/how-to-make-a-script-wait-for-a-pressed-key
