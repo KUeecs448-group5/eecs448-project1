@@ -90,10 +90,13 @@ def shot(player):
           elif not yCoord.isnumeric():
               print("Invalid input (not an integer). Try again")
           yCoord = int(yCoord) - 1
+
+      repeatAll = False
       if shotArr[yCoord][xCoord] == 1:
-          Print("Shot Has ALready Been Taken, Please Select Another Space."
-      else:
-          repeatAll == False
+          print("Shot Has ALready Been Taken, Please Select Another Space.")
+          repeatAll = True
+
+          
 
 
     #register shot
@@ -121,4 +124,4 @@ def shot(player):
         else:
             print("Player 2: ", end="")
         print("Shot missed.")
-        input("Switch players then press Enter to continue...")print(chr(27) + "[2J")
+        input("Switch players then press Enter to continue...")
