@@ -4,6 +4,12 @@ import Print, shotDetection, shipPlacement2
 from termcolor import colored
 
 def run(shipCount):
+    """
+    implements every method of battleship game and checks for winner every turn
+    shipCount: number of ships(potentially of various sizes) that each player has.
+    Precondition: player variable initialized.
+    Postcondition: checks win condition every turn and declares winner when one player has no ships remaining.
+    """
     endGame = False
     player = 1
     

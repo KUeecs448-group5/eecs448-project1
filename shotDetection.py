@@ -1,6 +1,7 @@
 #Name: Caden Kroonenberg
 #user shot selection
 
+
 import shipPlacement2, time
 
 p1shotCount = 0
@@ -35,6 +36,12 @@ p2shotArr = [
 
 
 def shot(player):
+    """
+    Allows Player to shoot, depending on which player
+    player: tells method which player is shooting currently
+    Precondition: player variable to be initialized
+    Postcondition: depending on which player, one value of opposing player is changed
+    """
     if player == 1:
         shotArr = p1shotArr
         enemyShipArr = shipPlacement2.p2shipArr
