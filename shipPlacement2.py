@@ -34,6 +34,12 @@ playArr = [p1shipArr,p2shipArr]
 
 #made userInput function, so it can easily be called again in the event of a misplaced ship
 def userInput(i):
+    """
+    Lets turn player decide placement of ship, first by asking for leading node, then asking for column A-J,
+    followed by row 1-10.
+    Precondition: player variable initialized
+    Postcondition: ship object is placed on map
+    """
     print('Placing Size ' + str(i) + ' Ship')
     if not i == 1:
       orient = input('Horizontal or Vertical?(H/V): ')#code for verifing valid h or v for orientation
@@ -88,9 +94,14 @@ def userInput(i):
     yCoord = int(yChar) - 1 #change to 0-9
     return xCoord,yCoord,face
 
-def shipDefiner(x,y,z,t,p):#looks at the request space, if avalible places ship and returns true, otherwisr returns falce
+def shipDefiner(x,y,z,t,p):#looks at the request space, if available places ship and returns true, otherwise returns false
 #x,y,z,t,p = xCoord, yCoord, orientation, size, player
 #first check if ship is hanging off end
+  """
+  Makes sure that ship is in right place
+  Precondition: Ship object initialized
+  Postcondition: Ship object is in valid position or is rejected
+  """
   if z == 0: #check horizontal hang off
     if (x + t - 1) > 9:
       return False
@@ -118,7 +129,7 @@ objArr = [[], []] #player, size-1
 #call to place all ships for one player
 def placeShip(player, shipCount):
   #player 1 = 0, player 2 = 1
-  for i in range(1, int(shipCount)+1): #i = size of ship curently placing
+  for i in range(1, int(shipCount)+1): #i = size of ship currently placing
     input = userInput(i)#fetch orientation and coordinates
     xVar,yVar,fVar = input
     test = shipDefiner(xVar,yVar,fVar,i,player)
