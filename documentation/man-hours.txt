@@ -17,11 +17,13 @@ Daily hours logged in dedicated Discord text channel
 
 2/14
 0.5 hours - Wesley - Python tutorials
+3 hours - Steven - Python/Flask tutorials
 0.5 hours - Steven - Main module improvements
 
 2/15
 1 hour - Wesley - Python tutorials and work on ship object
 3 hours - Caden - Improve UI functions in main module
+3 hours - Steven - Python/Flask tutorials
 
 2/16
 8 hours - Chen - Ship placement module initial implementation
