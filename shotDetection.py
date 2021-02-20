@@ -51,7 +51,7 @@ def shot(player):
     
     #shot selection
     repeatAll = True
-    while repeatAll == True  
+    while repeatAll == True:  
       repeat = True
       while repeat == True:
           repeat = False
