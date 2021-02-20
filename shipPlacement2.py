@@ -37,6 +37,7 @@ def userInput(i):
     """
     Lets turn player decide placement of ship, first by asking for leading node, then asking for column A-J,
     followed by row 1-10.
+    i: tells program which player's turn it is and therefor who should be doing input.
     Precondition: player variable initialized
     Postcondition: ship object is placed on map
     """
@@ -98,7 +99,12 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if available places ship
 #x,y,z,t,p = xCoord, yCoord, orientation, size, player
 #first check if ship is hanging off end
   """
-  Makes sure that ship is in right place
+  Helper method to placeShip, makes sure placeShip is in valid area.
+  x:xCoord
+  y:yCoord
+  z:orientation(vertical or horizontal)
+  t: size(size of ship) 
+  player: tells program whose turn it is
   Precondition: Ship object initialized
   Postcondition: Ship object is in valid position or is rejected
   """
@@ -128,6 +134,13 @@ objArr = [[], []] #player, size-1
 
 #call to place all ships for one player
 def placeShip(player, shipCount):
+  """
+  places Ship object on board with shipDefiner and userInput methods.
+  player: tells program whose turn it is
+  shipCount: number of ships(potentially of various sizes) that each player has.
+  Precondition: player variable initialized, shipCount value from 1-6
+  Postcondition: ship object is placed on board
+  """
   #player 1 = 0, player 2 = 1
   for i in range(1, int(shipCount)+1): #i = size of ship currently placing
     input = userInput(i)#fetch orientation and coordinates
