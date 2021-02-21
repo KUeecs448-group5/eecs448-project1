@@ -93,7 +93,7 @@ def shot(player):
 
       repeatAll = False
       if shotArr[yCoord][xCoord] == 1:
-          print("Shot Has ALready Been Taken, Please Select Another Space.")
+          print("You have already fired on this location, please select another space:")
           repeatAll = True
 
           
