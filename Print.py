@@ -2,7 +2,15 @@ import shipPlacement2, shotDetection
 from termcolor import colored
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
+
 def printTopMap(player):
+    """
+    Prints target mapping of turn player(coordinates that turn player has shot, and that denotes whether hit and missed enemy, and locations 
+    has not shot at yet)
+    player: tells program whose turn it is
+    Precondition: player variable initialized
+    Postcondition: target mapping of turn player printed in command line
+    """
     if player == 1:
         enemyShipArr = shipPlacement2.p2shipArr
         shotArr = shotDetection.p1shotArr
@@ -28,6 +36,12 @@ def printTopMap(player):
 
 #print bottom map - 'X' denotes ship placement, '*' denotes hit ship, '^' denotes area not fired upon by enemy
 def printBottomMap(player):
+    """
+    Prints out map of turn player's ship placements 
+    player: tells program whose turn it is
+    Precondition: player variable initialized
+    Postcondition: turn player's ship placements printed in command line
+    """
     if player == 1:
         shipArr = shipPlacement2.p1shipArr
         shotArr = shotDetection.p2shotArr

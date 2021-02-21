@@ -17,11 +17,13 @@ Daily hours logged in dedicated Discord text channel
 
 2/14
 0.5 hours - Wesley - Python tutorials
+3 hours - Steven - Python/Flask tutorials
 0.5 hours - Steven - Main module improvements
 
 2/15
 1 hour - Wesley - Python tutorials and work on ship object
 3 hours - Caden - Improve UI functions in main module
+3 hours - Steven - Python/Flask tutorials
 
 2/16
 8 hours - Chen - Ship placement module initial implementation
@@ -38,11 +40,12 @@ Daily hours logged in dedicated Discord text channel
 2/19
 1 hour - Caden - Documentation
 2 hours - Caden - Improvements to main, ship placement, and shot object
+<<<<<<< HEAD
 0.5 hours - Caden - Implement termcolor files
-3.5 hours - Steven - HTML documentation and ship placement fixes
+1.5 hours - Steven - Pydoc tutorials and implementation
 2.5 hours - Wesley - Group work (general fixes and documentation)
 
 2/20
-1 hour - Steven - Documentation
+1 hour - Steven - pydoc implementation/HTMl documentation
 
 Total: 43.5 hours
