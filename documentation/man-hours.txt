@@ -39,3 +39,10 @@ Daily hours logged in dedicated Discord text channel
 1 hour - Caden - Documentation
 2 hours - Caden - Improvements to main, ship placement, and shot object
 0.5 hours - Caden - Implement termcolor files
+3.5 hours - Steven - HTML documentation and ship placement fixes
+2.5 hours - Wesley - Group work (general fixes and documentation)
+
+2/20
+1 hour - Steven - Documentation
+
+Total: 43.5 hours
