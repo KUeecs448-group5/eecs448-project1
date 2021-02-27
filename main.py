@@ -3,6 +3,8 @@
 import Print, shotDetection, shipPlacement2
 from termcolor import colored
 
+areTwoPlayers = True;
+
 def run(shipCount):
     """
     implements every method of battleship game and checks for winner every turn
@@ -12,7 +14,7 @@ def run(shipCount):
     """
     endGame = False
     player = 1
-    
+
     print()
     print("Player 1:")
     print()
@@ -36,7 +38,7 @@ def run(shipCount):
         print()
         Print.printBottomMap(player)
         shotDetection.shot(player)
-    
+
         #check win condition and switch players if not
         if player == 1:
             if shotDetection.p1shotCount >= winCount:
