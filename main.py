@@ -4,6 +4,17 @@ import Print, shotDetection, shipPlacement2
 from termcolor import colored
 
 areTwoPlayers = True;
+userInput = "0";
+
+print("Please give the number of people that will be playing.");
+print();
+
+while userInput != "1" and userInput != "2":
+    userInput = input("Type '1' if you want to play against the computer, or '2' if you want to play against another person.");
+    print();
+    if (userInput != "1" and userInput != "2"):
+        print("Invalid input. Please try again");
+        print();
 
 def run(shipCount):
     """
