@@ -15,9 +15,6 @@ while userInput != "1" and userInput != "2":
     if (userInput != "1" and userInput != "2"):
         print("Invalid input. Please try again");
         print();
-    else:
-        if userInput == "1":
-            areTwoPlayers = False;
 
 def run(shipCount):
     """
