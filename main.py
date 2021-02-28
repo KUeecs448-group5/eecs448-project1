@@ -84,3 +84,10 @@ while repeat == True:
           winCount = winCount + i
 
 run(shipCount)
+
+if userInput == "1":
+    # call AI code
+    print("AI");
+elif userInput == "2":
+    # call two-player code
+    print("2-player");
