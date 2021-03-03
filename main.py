@@ -3,7 +3,6 @@
 import Print, shotDetection, shipPlacement2
 from termcolor import colored
 
-areTwoPlayers = True;
 userInput = "0";
 
 print("Please give the number of people that will be playing.");
