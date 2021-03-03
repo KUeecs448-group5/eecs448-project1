@@ -3,6 +3,18 @@
 import Print, shotDetection, shipPlacement2
 from termcolor import colored
 
+userInput = "0";
+
+print("Please give the number of people that will be playing.");
+print();
+
+while userInput != "1" and userInput != "2":
+    userInput = input("Type '1' if you want to play against the computer, or '2' if you want to play against another person.");
+    print();
+    if (userInput != "1" and userInput != "2"):
+        print("Invalid input. Please try again");
+        print();
+
 def run(shipCount):
     """
     implements every method of battleship game and checks for winner every turn
@@ -12,7 +24,7 @@ def run(shipCount):
     """
     endGame = False
     player = 1
-    
+
     print()
     print("Player 1:")
     print()
@@ -36,7 +48,7 @@ def run(shipCount):
         print()
         Print.printBottomMap(player)
         shotDetection.shot(player)
-    
+
         #check win condition and switch players if not
         if player == 1:
             if shotDetection.p1shotCount >= winCount:
@@ -71,3 +83,10 @@ while repeat == True:
           winCount = winCount + i
 
 run(shipCount)
+
+if userInput == "1":
+    # call AI code
+    print("AI");
+elif userInput == "2":
+    # call two-player code
+    print("2-player");
