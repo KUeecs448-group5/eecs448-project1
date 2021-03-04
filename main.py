@@ -1,6 +1,6 @@
 #Name: Caden Kroonenberg
 
-import Print, shotDetection, shipPlacement2, Easy
+import Print, shotDetection, shipPlacement2, Easy, aiPlacement
 from termcolor import colored
 
 userInput = "0";
@@ -81,6 +81,21 @@ while repeat == True:
         winCount = 0
         for i in range(1,int(shipCount)+1):
           winCount = winCount + i
+
+def runAI(shipCount):
+    """
+    implements Computer-based version of the game every method of battleship game and checks for winner every turn
+    shipCount: number of ships(potentially of various sizes) that player and computer has.
+    Precondition: player variable initialized.
+    Postcondition: checks win condition every turn and declares winner when player or computer has no ships remaining.
+    """
+    endGame = False
+    player = 1
+    print()
+    print("Player 1:")
+    print()
+
+runAI(shipCount)
 
 run(shipCount)
 
