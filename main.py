@@ -94,10 +94,11 @@ def runAI(shipCount):
     print()
     print("Player 1:")
     print()
+    shipPlacement2.placeShip(0, shipCount)
 
 runAI(shipCount)
 
-run(shipCount)
+# run(shipCount)
 
 if userInput == "1":
     # call AI code
