@@ -1,6 +1,6 @@
 #Name: Caden Kroonenberg
 
-import Print, shotDetection, shipPlacement2, easyAI
+import Print, shotDetection, shipPlacement2, Easy
 from termcolor import colored
 
 userInput = "0";
