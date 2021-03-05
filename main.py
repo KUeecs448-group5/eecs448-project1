@@ -103,8 +103,6 @@ def runAI(shipCount):
     print()
     print()
     aiPlacement.placeShip(shipCount)
-    # for i in range(10):
-    #     print(aiPlacement.AIshipArr[i])
 
 runAI(shipCount)
 
