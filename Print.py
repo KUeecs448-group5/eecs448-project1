@@ -65,7 +65,7 @@ def printBottomMap(player):
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
 
-def aibottomMap(aiShipArr):
+def aiBottomMap(aiShipArr):
     print("Computer ships:")
     print("  A B C D E F G H I J")
 
