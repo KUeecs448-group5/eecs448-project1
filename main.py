@@ -113,14 +113,14 @@ print(colored("BATTLESHIP", 'blue', 'on_grey'))
 print()
 repeat = True
 while repeat == True:
-        repeat = False
-        shipCount = input("Enter ship count [1-6]: ")
-        if not shipCount.isnumeric():
-            print("Invalid input (not an integer). Try again")
-            repeat = True
-        elif int(shipCount) > 6 or int(shipCount) < 1:
-            print("Invalid input. Try again")
-            repeat = True
+    repeat = False
+    shipCount = input("Enter ship count [1-6]: ")
+    if not shipCount.isnumeric():
+        print("Invalid input (not an integer). Try again")
+        repeat = True
+    elif int(shipCount) > 6 or int(shipCount) < 1:
+        print("Invalid input. Try again")
+        repeat = True
         winCount = 0
         for i in range(1,int(shipCount)+1):
           winCount = winCount + i
