@@ -88,6 +88,10 @@ def runAI(shipCount, level):
             player = 3
         elif player == 3:
             print("Computer Turn:")
+
+            # computer shoot
+
+
             input("Press Enter and then switch players to continue...")
             print(chr(27) + "[2J")
             player = 1
