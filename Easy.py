@@ -37,11 +37,11 @@ def getShot():
     yCoord = xShot[1]
     yCoord = int(yCoord)
     #  print(yCoord)
-    print(random_list[0])
-    print(random_list[1])
+    # print(random_list[0])
+    # print(random_list[1])
     random_list.remove(xShot)
-    print(random_list[0])
-    print(random_list[1])
+    # print(random_list[0])
+    # print(random_list[1])
     #  print(random_list)
 
     #   print(" \n")
