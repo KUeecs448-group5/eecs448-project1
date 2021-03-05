@@ -77,7 +77,7 @@ def aibottomMap(aiShipArr):
         for j in range(0, 10):
             if aiShipArr[i][j] == 0:
                 print(colored("^ ", "blue"), end="")
-            elif aiShipArr[i][j] == 1 and not aiShipArr[i][j] == 0:
+            elif aiShipArr[i][j] != 0 and not aiShipArr[i][j] == 0:
                 print(colored("* ", "red", "on_grey"), end="")
             elif aiShipArr[i][j] == 0 and not aiShipArr[i][j] == 0:
                 print(colored("* ", "white", "on_grey"), end="")
