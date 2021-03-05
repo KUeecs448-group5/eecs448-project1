@@ -65,23 +65,7 @@ def printBottomMap(player):
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
 
-def aiTopMap(aiShipArr):
-    print("Computer ships:")
-    print("  A B C D E F G H I J")
-
-# implemented ai place ships board
-    for i in range(0, 10):
-        if (i < 9):
-            print("", i+1, end="")
-        else:
-            print(i+1, end="")
-        for j in range(0, 10):
-            if aiShipArr[i][j] == 0:
-                print(colored("^ ", "blue"), end="")
-            elif aiShipArr[i][j] != 0:
-                print(colored("* ", "white", "on_grey"), end="")
-        print();
-
+# AI UTILITY MAP
 def aiBottomMap(aiShipArr):
     print("Computer ships:")
     print("  A B C D E F G H I J")

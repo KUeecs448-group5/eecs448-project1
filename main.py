@@ -86,14 +86,10 @@ def runAI(shipCount, level):
                 print()
                 Print.printBottomMap(player)
                 easyShotDetection.shot(player)
-                input("Press Enter and then switch players to continue...")
-                print(chr(27) + "[2J")
                 player = 3
             elif player == 3:
                 print("Computer Turn:")
-                Print.aiTopMap()
                 print()
-                Print.aiBottomMap()
                 easyShotDetection.shot(player)
                 input("Press Enter and then switch players to continue...")
                 print(chr(27) + "[2J")
