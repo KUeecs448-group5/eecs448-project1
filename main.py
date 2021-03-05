@@ -1,6 +1,6 @@
 #Name: Caden Kroonenberg
 
-import Print, shotDetection, shipPlacement2, easy, aiPlacement
+import Print, shotDetection, shipPlacement2, easy, aiPlacement, easyShotDetection
 from termcolor import colored
 
 def run(shipCount):
@@ -79,24 +79,25 @@ def runAI(shipCount, level):
     player = 1
 
     while not endGame:
-        if player == 1:
-            print("Player 1:")
-            Print.printTopMap(player)
-            print()
-            Print.printBottomMap(player)
-            shotDetection.shot(player)
-            player = 3
-        elif player == 3:
-            print("Computer Turn:")
-
-            # computer shoot
-            if level == 'easy':
-                print(easy.getShot())
+        if level == 'easy':
+            if player == 1:
+                print("Player 1:")
+                Print.printTopMap(player)
                 print()
-
-            input("Press Enter and then switch players to continue...")
-            print(chr(27) + "[2J")
-            player = 1
+                Print.printBottomMap(player)
+                easyShotDetection.shot(player)
+                input("Press Enter and then switch players to continue...")
+                print(chr(27) + "[2J")
+                player = 3
+            elif player == 3:
+                print("Computer Turn:")
+                Print.aiTopMap()
+                print()
+                Print.aiBottomMap()
+                easyShotDetection.shot(player)
+                input("Press Enter and then switch players to continue...")
+                print(chr(27) + "[2J")
+                player = 1
 
 # user input
 userInput = "0"
