@@ -1,7 +1,19 @@
 #Name: Caden Kroonenberg
 
-import Print, shotDetection, shipPlacement2
+import Print, shotDetection, shipPlacement2, Easy, aiPlacement
 from termcolor import colored
+
+userInput = "0";
+
+print("Please give the number of people that will be playing.");
+print();
+
+while userInput != "1" and userInput != "2":
+    userInput = input("Type '1' if you want to play against the computer, or '2' if you want to play against another person.");
+    print();
+    if (userInput != "1" and userInput != "2"):
+        print("Invalid input. Please try again");
+        print();
 
 def run(shipCount):
     """
@@ -12,7 +24,7 @@ def run(shipCount):
     """
     endGame = False
     player = 1
-    
+
     print()
     print("Player 1:")
     print()
@@ -36,7 +48,7 @@ def run(shipCount):
         print()
         Print.printBottomMap(player)
         shotDetection.shot(player)
-    
+
         #check win condition and switch players if not
         if player == 1:
             if shotDetection.p1shotCount >= winCount:
@@ -70,4 +82,32 @@ while repeat == True:
         for i in range(1,int(shipCount)+1):
           winCount = winCount + i
 
-run(shipCount)
+def runAI(shipCount):
+    """
+    implements Computer-based version of the game every method of battleship game and checks for winner every turn
+    shipCount: number of ships(potentially of various sizes) that player and computer has.
+    Precondition: player variable initialized.
+    Postcondition: checks win condition every turn and declares winner when player or computer has no ships remaining.
+    """
+    endGame = False
+    player = 1
+    print()
+    print("Player 1:")
+    print()
+    shipPlacement2.placeShip(0, shipCount)
+
+    # Computer turn
+    aiPlacement.placeShip(shipCount)
+    # for i in range(10):
+    #     print(aiPlacement.AIshipArr[i])
+
+runAI(shipCount)
+
+# run(shipCount)
+
+if userInput == "1":
+    # call AI code
+    print("AI");
+elif userInput == "2":
+    # call two-player code
+    print("2-player");
