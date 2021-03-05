@@ -3,7 +3,7 @@
 
 
 from shipObject import Ship
-import random
+import random, Print
 
 AIshipArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -90,6 +90,7 @@ def placeShip(shipCount):
             xVar, yVar, fVar = input
             test = shipDefiner(xVar, yVar, fVar, i)
         objArr.append(Ship(i, 2))
+
 
 #a simple console test to see the randomly generated board
 '''
