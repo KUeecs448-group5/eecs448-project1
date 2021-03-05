@@ -69,6 +69,7 @@ def aiBottomMap(aiShipArr):
     print("Computer ships:")
     print("  A B C D E F G H I J")
 
+# implemented ai place ships board
     for i in range(0, 10):
         if (i < 9):
             print("", i+1, end="")
@@ -77,8 +78,6 @@ def aiBottomMap(aiShipArr):
         for j in range(0, 10):
             if aiShipArr[i][j] == 0:
                 print(colored("^ ", "blue"), end="")
-            elif aiShipArr[i][j] != 0 and not aiShipArr[i][j] == 0:
-                print(colored("* ", "red", "on_grey"), end="")
-            elif aiShipArr[i][j] == 0 and not aiShipArr[i][j] == 0:
+            elif aiShipArr[i][j] != 0:
                 print(colored("* ", "white", "on_grey"), end="")
         print();
