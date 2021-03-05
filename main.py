@@ -65,23 +65,6 @@ def run(shipCount):
                 player = 1
                 print(chr(27) + "[2J")
 
-print(chr(27) + "[2J")
-print(colored("BATTLESHIP", 'blue', 'on_grey'))
-print()
-repeat = True
-while repeat == True:
-        repeat = False
-        shipCount = input("Enter ship count [1-6]: ")
-        if not shipCount.isnumeric():
-            print("Invalid input (not an integer). Try again")
-            repeat = True
-        elif int(shipCount) > 6 or int(shipCount) < 1:
-            print("Invalid input. Try again")
-            repeat = True
-        winCount = 0
-        for i in range(1,int(shipCount)+1):
-          winCount = winCount + i
-
 def runAI(shipCount):
     """
     implements Computer-based version of the game every method of battleship game and checks for winner every turn
@@ -121,13 +104,46 @@ def runAI(shipCount):
             print(chr(27) + "[2J")
             player = 1
 
-runAI(shipCount)
-
-# run(shipCount)
-
+# user input
 if userInput == "1":
-    # call AI code
-    print("AI");
+    difficultyLevel = input("There are three computer levels 'Easy', 'Medium', and 'Hard'.  Please select which level you would like to play against")
+    # How to put a string to lowercase https://www.programiz.com/python-programming/methods/string/lower
+    while difficultyLevel.lower() != "easy" and difficultyLevel.lower() != 'medium' and difficultyLevel.lower() != 'hard':
+        difficultyLevel = input("That was an invalid input, please enter the string 'Easy', 'Medium', or 'Hard'")
+
+    if difficultyLevel.lower() == 'easy':
+        print("Easy Level")
+    elif difficultyLevel.lower() == 'medium':
+        print("Medium Level")
+    else:
+        print("Hard Level")
+
+
 elif userInput == "2":
     # call two-player code
     print("2-player");
+
+for i in range(0, 10):
+    print()
+    
+print(colored("BATTLESHIP", 'blue', 'on_grey'))
+print()
+repeat = True
+while repeat == True:
+        repeat = False
+        shipCount = input("Enter ship count [1-6]: ")
+        if not shipCount.isnumeric():
+            print("Invalid input (not an integer). Try again")
+            repeat = True
+        elif int(shipCount) > 6 or int(shipCount) < 1:
+            print("Invalid input. Try again")
+            repeat = True
+        winCount = 0
+        for i in range(1,int(shipCount)+1):
+          winCount = winCount + i
+
+
+
+# run(shipCount)
+
+runAI(shipCount)
