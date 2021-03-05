@@ -3,18 +3,6 @@
 import Print, shotDetection, shipPlacement2, Easy, aiPlacement
 from termcolor import colored
 
-userInput = "0";
-
-print("Please give the number of people that will be playing.");
-print();
-
-while userInput != "1" and userInput != "2":
-    userInput = input("Type '1' if you want to play against the computer, or '2' if you want to play against another person.");
-    print();
-    if (userInput != "1" and userInput != "2"):
-        print("Invalid input. Please try again");
-        print();
-
 def run(shipCount):
     """
     implements every method of battleship game and checks for winner every turn
@@ -65,7 +53,7 @@ def run(shipCount):
                 player = 1
                 print(chr(27) + "[2J")
 
-def runAI(shipCount):
+def runAI(shipCount, level):
     """
     implements Computer-based version of the game every method of battleship game and checks for winner every turn
     shipCount: number of ships(potentially of various sizes) that player and computer has.
@@ -105,27 +93,19 @@ def runAI(shipCount):
             player = 1
 
 # user input
-if userInput == "1":
-    difficultyLevel = input("There are three computer levels 'Easy', 'Medium', and 'Hard'.  Please select which level you would like to play against")
-    # How to put a string to lowercase https://www.programiz.com/python-programming/methods/string/lower
-    while difficultyLevel.lower() != "easy" and difficultyLevel.lower() != 'medium' and difficultyLevel.lower() != 'hard':
-        difficultyLevel = input("That was an invalid input, please enter the string 'Easy', 'Medium', or 'Hard'")
+userInput = "0"
+level = ""
 
-    if difficultyLevel.lower() == 'easy':
-        print("Easy Level")
-    elif difficultyLevel.lower() == 'medium':
-        print("Medium Level")
-    else:
-        print("Hard Level")
+print("Please give the number of people that will be playing.")
+print();
 
-
-elif userInput == "2":
-    # call two-player code
-    print("2-player");
-
-for i in range(0, 10):
+while userInput != "1" and userInput != "2":
+    userInput = input("Type '1' if you want to play against the computer, or '2' if you want to play against another person.")
     print()
-    
+    if (userInput != "1" and userInput != "2"):
+        print("Invalid input. Please try again")
+        print()
+
 print(colored("BATTLESHIP", 'blue', 'on_grey'))
 print()
 repeat = True
@@ -143,7 +123,29 @@ while repeat == True:
           winCount = winCount + i
 
 
+if userInput == "1":
+    difficultyLevel = input("There are three computer levels 'Easy', 'Medium', and 'Hard'.  Please select which level you would like to play against")
+    # How to put a string to lowercase https://www.programiz.com/python-programming/methods/string/lower
+    while difficultyLevel.lower() != "easy" and difficultyLevel.lower() != 'medium' and difficultyLevel.lower() != 'hard':
+        difficultyLevel = input("That was an invalid input, please enter the string 'Easy', 'Medium', or 'Hard'")
+
+    if difficultyLevel.lower() == 'easy':
+        print("You chose the Easy Level")
+        level = "easy"
+    elif difficultyLevel.lower() == 'medium':
+        print("You chose the Medium Level")
+        level = "medium"
+    else:
+        print("You chose the Hard Level")
+        level = "hard"
+
+    runAI(shipCount, level)
+
+elif userInput == "2":
+    # call two-player code
+    print("2-player");
+
+
+
 
 # run(shipCount)
-
-runAI(shipCount)
