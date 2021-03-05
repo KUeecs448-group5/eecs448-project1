@@ -5,7 +5,7 @@ from termcolor import colored
 
 def printTopMap(player):
     """
-    Prints target mapping of turn player(coordinates that turn player has shot, and that denotes whether hit and missed enemy, and locations 
+    Prints target mapping of turn player(coordinates that turn player has shot, and that denotes whether hit and missed enemy, and locations
     has not shot at yet)
     player: tells program whose turn it is
     Precondition: player variable initialized
@@ -37,7 +37,7 @@ def printTopMap(player):
 #print bottom map - 'X' denotes ship placement, '*' denotes hit ship, '^' denotes area not fired upon by enemy
 def printBottomMap(player):
     """
-    Prints out map of turn player's ship placements 
+    Prints out map of turn player's ship placements
     player: tells program whose turn it is
     Precondition: player variable initialized
     Postcondition: turn player's ship placements printed in command line
@@ -64,3 +64,21 @@ def printBottomMap(player):
                 print(colored("* ", 'white', 'on_grey'), end ="")
             #elif statement for sunk ship - #; requires isSunk() function and ship object
         print()
+
+def aibottomMap(aiShipArr):
+    print("Your ships:")
+    print("  A B C D E F G H I J")
+
+    for i in range(0, 10):
+        if (i < 9):
+            print("", i+1, end="")
+        else:
+            print(i+1, end="")
+        for j in range(0, 10):
+            if aiShipArr[i][j] == 0:
+                print(colored("^ ", "blue"), end="")
+            elif aiShipArr[i][j] == 1 and not aiShipArr[i][j] == 0:
+                print(colored("* ", "red", "on_grey"), end="")
+            elif aiShipArr[i][j] == 0 and not aiShipArr[i][j] == 0:
+                print(colored("* ", "white", "on_grey"), end="")
+        print();
