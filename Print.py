@@ -66,7 +66,7 @@ def printBottomMap(player):
         print()
 
 def aibottomMap(aiShipArr):
-    print("Your ships:")
+    print("Computer ships:")
     print("  A B C D E F G H I J")
 
     for i in range(0, 10):
