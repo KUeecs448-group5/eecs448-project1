@@ -1,4 +1,4 @@
-import shipPlacement2, shotDetection, aiPlacement
+import shipPlacement2, shotDetection, aiPlacement, easyShotDetection
 from termcolor import colored
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
@@ -67,10 +67,29 @@ def printBottomMap(player):
 
 # AI MAPS
 def aiTopMap(player):
-    print()
+    enemyShipArr = shipPlacement2.p1shipArr
+    shotArr = easyShotDetection.p2shotArr
+    print("Shots taken at enemy:")
+    print("  A B C D E F G H I J")
+    for i in range(0, 10):
+        if(i < 9):
+            print("", i+1, end="")
+        else:
+            print(i+1, end="")
+        for j in range(0, 10):
+            if shotArr[i][j] == 0:
+                print(colored("^ ", 'blue'), end ='')
+            elif shotArr[i][j] == 1 and enemyShipArr[i][j] == 0:
+                print(colored("O ", 'white', 'on_white'), end ='')
+            elif shotArr[i][j] == 1 and not enemyShipArr[i][j] == 0:
+                print(colored("X ", 'red', 'on_red'), end ='')
+            #elif statement for sunk ship - #; requires isSunk() function and ship object
+        print()
 
 
 def aiBottomMap(player):
+    shipArr = aiPlacement.AIshipArr
+    shotArr = shotDetection.p1shotArr
     print("Computer ships:")
     print("  A B C D E F G H I J")
 
