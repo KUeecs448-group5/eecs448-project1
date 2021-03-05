@@ -84,7 +84,7 @@ def runAI(shipCount, level):
             Print.printTopMap(player)
             print()
             Print.printBottomMap(player)
-            shotDetection.shot(player)
+            easyShotDetection.shot(player)
             player = 3
         else:
             print("Computer:")
