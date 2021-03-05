@@ -95,8 +95,13 @@ def runAI(shipCount):
     print("Player 1:")
     print()
     shipPlacement2.placeShip(0, shipCount)
+    input("Press Enter and then switch players to continue...")
+    print(chr(27) + "[2J")
 
     # Computer turn
+    print("Placing computer ships...")
+    print()
+    print()
     aiPlacement.placeShip(shipCount)
     # for i in range(10):
     #     print(aiPlacement.AIshipArr[i])
