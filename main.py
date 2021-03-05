@@ -1,6 +1,6 @@
 #Name: Caden Kroonenberg
 
-import Print, shotDetection, shipPlacement2, Easy, aiPlacement
+import Print, shotDetection, shipPlacement2, easy, aiPlacement
 from termcolor import colored
 
 def run(shipCount):
@@ -91,7 +91,7 @@ def runAI(shipCount, level):
 
             # computer shoot
             if level == 'easy':
-                print(Easy.getShot())
+                print(easy.getShot())
                 print()
 
             input("Press Enter and then switch players to continue...")
