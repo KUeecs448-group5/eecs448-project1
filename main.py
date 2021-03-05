@@ -102,7 +102,6 @@ def runAI(shipCount):
     player = 3;
     print("Placing computer ships...")
     print()
-    print()
     aiPlacement.placeShip(shipCount)
     input("Press Enter and then switch players to continue...")
     print(chr(27) + "[2J")
@@ -115,9 +114,12 @@ def runAI(shipCount):
             print()
             Print.printBottomMap(player)
             shotDetection.shot(player)
+            player = 3
         elif player == 3:
             print("Computer Turn:")
-
+            input("Press Enter and then switch players to continue...")
+            print(chr(27) + "[2J")
+            player = 1
 
 runAI(shipCount)
 
