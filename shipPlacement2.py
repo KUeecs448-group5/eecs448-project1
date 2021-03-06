@@ -133,7 +133,7 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if available places ship
 objArr = [[], []] #player, size-1
 
 #call to place all ships for one player
-def placeShip(player, shipCount, level):
+def placeShip(player, shipCount):
   """
   places Ship object on board with shipDefiner and userInput methods.
   player: tells program whose turn it is

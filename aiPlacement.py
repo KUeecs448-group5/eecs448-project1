@@ -90,7 +90,6 @@ def placeShip(shipCount):
             xVar, yVar, fVar = input
             test = shipDefiner(xVar, yVar, fVar, i)
         objArr.append(Ship(i, 2))
-    Print.printBottomMap(3);
 
 
 #a simple console test to see the randomly generated board
