@@ -1,7 +1,7 @@
 #Name: Caden Kroonenberg
 
 
-import Print, shotDetection, shipPlacement2
+import Print, shotDetection, shipPlacement2, aiPlacement
 from termcolor import colored
 
 def run(shipCount):
@@ -73,7 +73,7 @@ def aiRun(shipCount):
     print(chr(27) + "[2J")
     print("Player 2:")
     print()
-    shipPlacement2.placeShip(1, shipCount)
+    aiPlacement.placeShip(shipCount)
     player = 1
     input("Press Enter and then switch players to continue...")
     print(chr(27) + "[2J")
