@@ -53,31 +53,6 @@ def run(shipCount):
                 player = 1
                 print(chr(27) + "[2J")
 
-print(chr(27) + "[2J")
-print(colored("BATTLESHIP", 'blue', 'on_grey'))
-print()
-
-repeat = True
-while repeat == True:
-        repeat = False
-        shipCount = input("Enter ship count [1-6]: ")
-        if not shipCount.isnumeric():
-            print("Invalid input (not an integer). Try again")
-            repeat = True
-        elif int(shipCount) > 6 or int(shipCount) < 1:
-            print("Invalid input. Try again")
-            repeat = True
-        winCount = 0
-        for i in range(1,int(shipCount)+1):
-          winCount = winCount + i
-
-userInput = input("If you would like to play against the computer type 'computer', otherwise type any characters for a two-player game ")
-
-if userInput == "computer":
-    runAI(shipCount)
-else:
-    run(shipCount)
-
 def runAI(shipCount):
     """
     implements every method of battleship game and checks for winner every turn
@@ -128,3 +103,28 @@ def runAI(shipCount):
             else:
                 player = 1
                 print(chr(27) + "[2J")
+
+print(chr(27) + "[2J")
+print(colored("BATTLESHIP", 'blue', 'on_grey'))
+print()
+
+repeat = True
+while repeat == True:
+        repeat = False
+        shipCount = input("Enter ship count [1-6]: ")
+        if not shipCount.isnumeric():
+            print("Invalid input (not an integer). Try again")
+            repeat = True
+        elif int(shipCount) > 6 or int(shipCount) < 1:
+            print("Invalid input. Try again")
+            repeat = True
+        winCount = 0
+        for i in range(1,int(shipCount)+1):
+          winCount = winCount + i
+
+userInput = input("If you would like to play against the computer type 'computer', otherwise type any characters for a two-player game ")
+
+if userInput == "computer":
+    runAI(shipCount)
+else:
+    run(shipCount)
