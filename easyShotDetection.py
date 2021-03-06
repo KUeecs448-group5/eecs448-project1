@@ -44,7 +44,7 @@ def hardShot(player):
     while i < 10:
         while j < 10:
             # len function https://stackoverflow.com/questions/21030116/python-test-average-calculator-returen-error-list-object-has-no-attribute-len
-            if enemyShipArr[i][j] != 0 and rowHit[len(rowHit) - 1] != i or columnHit[1][len(columnHit) - 1] != j:
+            if enemyShipArr[i][j] != 0 and rowHit[len(rowHit) - 1] != i or columnHit[len(columnHit) - 1] != j:
                 shipPlacement2.objArr[player - 1][enemyShipArr[i][j] - 1].hit()
                 print("Shot Hit!")
                 input("Switch players then press Enter to continue...")
