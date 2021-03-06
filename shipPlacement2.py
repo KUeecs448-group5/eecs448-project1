@@ -133,7 +133,7 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if available places ship
 objArr = [[], []] #player, size-1
 
 #call to place all ships for one player
-def placeShip(player, shipCount):
+def placeShip(player, shipCount, level):
   """
   places Ship object on board with shipDefiner and userInput methods.
   player: tells program whose turn it is
@@ -154,5 +154,8 @@ def placeShip(player, shipCount):
     objArr[player].append(Ship(i,player))
     print()
     print("Current ship placement:")
-    Print.printBottomMap(player + 1)
+    if level == "easy" or level == "medium" or level == "hard":
+        Print.aiBottomMap(1)
+    else:
+        Print.printBottomMap(player + 1)
     print()
