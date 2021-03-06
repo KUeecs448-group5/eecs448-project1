@@ -1,7 +1,7 @@
 #Name: Caden Kroonenberg
 
 
-import Print, shotDetection, shipPlacement2, aiPlacement
+import Print, shotDetection, shipPlacement2, aiPlacement, easyShotDetection
 from termcolor import colored
 
 def run(shipCount):
@@ -36,7 +36,7 @@ def run(shipCount):
         Print.printTopMap(player)
         print()
         Print.printBottomMap(player)
-        shotDetection.shot(player)
+        easyShotDetection.shot(player)
 
         #check win condition and switch players if not
         if player == 1:
