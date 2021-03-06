@@ -111,16 +111,19 @@ def runAI(shipCount, level):
     while not endGame:
         if player == 1:
             print("Player 1:")
-            Print.printTopMap(player)
+            Print.aiTopMap(player)
             print()
-            Print.printBottomMap(player)
+            Print.aiBottomMap(player)
             easyShotDetection.shot(player)
         else:
             print("Computer:")
             Print.aiTopMap(player)
             print()
             Print.aiBottomMap(player)
-            easyShotDetection.hardShot((player - 1))
+            if level == "easy":
+                easyShotDetection.shot(player)
+            elif level == "hard":
+             easyShotDetection.hardShot((player - 1))
 
         #check win condition and switch players if not
         if player == 1:
