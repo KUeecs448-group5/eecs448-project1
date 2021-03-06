@@ -35,22 +35,23 @@ p2shotArr = [
 
 ###### HARD AI CODE #######
 def hardShot(player):
-    placesHit = [
-        [],
-        []
-    ]
+    # -1's initalize arrays with dummy values
+    rowHit = [-1]
+    columnHit = [-1]
     enemyShipArr = shipPlacement2.p1shipArr
     i = 0
     j = 0
     while i < 10:
         while j < 10:
-            if enemyShipArr[i][j] != 0:
+            # len function https://stackoverflow.com/questions/21030116/python-test-average-calculator-returen-error-list-object-has-no-attribute-len
+            if enemyShipArr[i][j] != 0 and rowHit[len(rowHit) - 1] != i or columnHit[1][len(columnHit) - 1] != j:
                 shipPlacement2.objArr[player - 1][enemyShipArr[i][j] - 1].hit()
+                print("Shot Hit!")
                 input("Switch players then press Enter to continue...")
                 print(chr(27) + "[2J")
                 # Append to array https://www.journaldev.com/33185/python-add-to-array
-                placesHit[0].append(i)
-                placesHit[1].append(j)
+                rowHit.append(i)
+                columnHit.append(j)
                 global p2shotCount
                 p2shotCount = p2shotCount + 1
                 return;
