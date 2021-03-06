@@ -3,6 +3,8 @@
 import Print, shotDetection, shipPlacement2, easy, aiPlacement, easyShotDetection
 from termcolor import colored
 
+###### RUN FUNCTIONS #####
+
 def run(shipCount):
     """
     implements every method of battleship game and checks for winner every turn
@@ -111,7 +113,8 @@ def runAI(shipCount, level):
                 player = 1
                 print(chr(27) + "[2J")
 
-# user input
+# CODE TO ASK PLAYER WHAT GAME THEY WANT TO PLAY
+
 userInput = "0"
 level = ""
 
@@ -143,6 +146,7 @@ while repeat == True:
 
 
 if userInput == "1":
+    # call one-player code
     difficultyLevel = input("There are three computer levels 'Easy', 'Medium', and 'Hard'.  Please select which level you would like to play against ")
     # How to put a string to lowercase https://www.programiz.com/python-programming/methods/string/lower
     while difficultyLevel.lower() != "easy" and difficultyLevel.lower() != 'medium' and difficultyLevel.lower() != 'hard':
@@ -162,9 +166,4 @@ if userInput == "1":
 
 elif userInput == "2":
     # call two-player code
-    print("2-player");
-
-
-
-
-# run(shipCount)
+    run(shipCount)
