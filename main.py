@@ -1,6 +1,6 @@
 #Name: Caden Kroonenberg
 
-import Print, shotDetection, shipPlacement2, aiPlacement
+import Print, shotDetection, shipPlacement2, aiPlacement, easyShotDetection
 from termcolor import colored
 
 def run(shipCount):
@@ -104,18 +104,19 @@ def runAI(shipCount):
         Print.printTopMap(player)
         print()
         Print.printBottomMap(player)
-        shotDetection.shot(player)
+        # shotDetection.shot(player) original
+        easyShotDetection.shot(player)
 
         #check win condition and switch players if not
         if player == 1:
-            if shotDetection.p1shotCount >= winCount:
+            if easyShotDetection.p1shotCount >= winCount: # original shotDetection.p1shotCount >= winCount:
                 endGame = True
                 print("\nPlayer 1 Wins!\n")
             else:
                 player = 2
                 print(chr(27) + "[2J")
         elif player == 2:
-            if shotDetection.p2shotCount == winCount:
+            if easyShotDetection.p2shotCount == winCount: # original shotDetection.p2shotCount == winCount:
                 endGame = True
                 print("\nPlayer 2 Wins!\n")
             else:
