@@ -143,7 +143,8 @@ def shot(player):
             p2shotCount = p2shotCount + 1
             print("Computer: ", end="")
         print("Shot hit!")
-        shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
+        # shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
+        shipPlacement2.objArr[player - 2][enemyShipArr[yCoord][xCoord] - 1].hit()
         input("Switch players then press Enter to continue...")
         print(chr(27) + "[2J")
     else:
