@@ -1,4 +1,5 @@
 import random
+import shipPlacement2
 
 """
 Was my design to do the easy AI
@@ -50,6 +51,36 @@ shotArrAI = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+playerShipArr = shipPlacement2.p1shipArr
+
+playerShipsArr = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+
+i = 0
+j = 0
+
+while i < 10:
+    while j < 10:
+        if playerShipsArr[i][j] == 1 and shotArrAI[i][j] == 0:
+            shotArrAI[i][j] = 1
+            j = 10
+            i = 10
+        j = j + 1
+    j = 0
+    i = i + 1
+
+print(shotArrAI)
+
 """
 test ship that runs through a player ship array and changes the shotArrAI coordinate
  to one when a ship is detected
@@ -66,15 +97,17 @@ playerShipsArr = [
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 """
+
+"""
 i = 0
 j = 0
 while i < 10:
     while j < 10:
-        #if playerShipsArr[i][j] == 1:
-            #shotArrAI[i][j] = 1
+        if playerShipsArr[i][j] == 1:
+            shotArrAI[i][j] = 1
         j = j + 1
     j = 0
     i = i+1
 
 print(shotArrAI)
-
+"""
