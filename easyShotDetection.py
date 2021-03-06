@@ -49,6 +49,7 @@ def hardShot(player):
                 input("Shot Hit!")
                 input("Switch players then press Enter to continue...")
                 print(chr(27) + "[2J")
+                # Append to array https://www.journaldev.com/33185/python-add-to-array
                 placesHit[0].append(i)
                 placesHit[1].append(j)
                 return;
