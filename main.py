@@ -123,7 +123,7 @@ def runAI(shipCount, level):
             if level == "easy":
                 easyShotDetection.shot(player)
             elif level == "hard":
-             easyShotDetection.hardShot((player - 1))
+             easyShotDetection.hardShot(player)
 
         #check win condition and switch players if not
         if player == 1:
@@ -139,7 +139,7 @@ def runAI(shipCount, level):
                 print("\nComputer Wins!\n")
             else:
                 player = 1
-                print(chr(27) + "[2J")
+                # print(chr(27) + "[2J")
 
 
 if userInput == "1":
