@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import Easy, shipPlacement2, time, aiPlacement
+import easy, shipPlacement2, time, aiPlacement
 
 p1shotCount = 0
 p2shotCount = 0

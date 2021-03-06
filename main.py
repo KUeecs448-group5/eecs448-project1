@@ -121,4 +121,4 @@ while repeat == True:
         for i in range(1,int(shipCount)+1):
           winCount = winCount + i
 
-run(shipCount)
+aiRun(shipCount)
