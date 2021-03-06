@@ -69,11 +69,11 @@ def shipDefiner(x, y, z, t):  # looks at the request space, if available places 
     return True
 
 
-objArr = []
+objArr = [[], []]
 
 
 # call to place all ships for the AI
-def placeShip(shipCount):
+def placeShip(player, shipCount):
     """
     places Ship object on board with shipDefiner and userInput methods.
     shipCount: number of ships(potentially of various sizes) that each player has.
@@ -89,10 +89,10 @@ def placeShip(shipCount):
             input = userInput(i)
             xVar, yVar, fVar = input
             test = shipDefiner(xVar, yVar, fVar, i)
-        objArr.append(Ship(i, 2))
+        shipPlacement2.objArr[player].append(Ship(i, player))
         print()
         print("Current ship placement:")
-        Print.printBottomMap(2)
+        Print.printBottomMap(player + 1)
         print()
 
 
