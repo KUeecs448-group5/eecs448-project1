@@ -41,9 +41,11 @@ def hardShot(player):
     j = 0
     while i < 10:
         while j < 10:
-            if not enemyShipArr[j][i] == 0 and not shotArr[j][i] == 0:
-                shipPlacement2.objArr[player - 1][enemyShipArr[j][i] - 1].hit()
-                print("Shot Hit!")
+            if enemyShipArr[i][j] != 0:
+                shipPlacement2.objArr[player - 1][enemyShipArr[i][j] - 1].hit()
+                input("Switch players then press Enter to continue...")
+                print(chr(27) + "[2J")
+                return;
             j = j + 1
         j = 0
         i = i+1
