@@ -53,29 +53,35 @@ shotArrAI = [
 
 playerShipArr = shipPlacement2.p1shipArr
 
+"""
 playerShipsArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
+"""
 
 
 def hitShip():
     i = 0
     j = 0
 
+    xCoord = 0
+    yCoord = 0
     while i < 10:
         while j < 10:
-            if playerShipsArr[i][j] == 1 and shotArrAI[i][j] == 0:
+            if playerShipArr[i][j] == 1 and shotArrAI[i][j] == 0:
                 shotArrAI[i][j] = 1
-                return (i, j)
+                xCoord = i
+                yCoord = j
+                return (xCoord, yCoord)
             j = j + 1
         j = 0
         i = i + 1
