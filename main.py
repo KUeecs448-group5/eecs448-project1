@@ -18,13 +18,13 @@ def run(shipCount):
     print()
     print("Player 1:")
     print()
-    shipPlacement2.placeShip(0, shipCount)
+    shipPlacement2.placeShip(0, shipCount, "null")
     player = 2
     input("Press Enter and then switch players to continue...")
     print(chr(27) + "[2J")
     print("Player 2:")
     print()
-    shipPlacement2.placeShip(1, shipCount)
+    shipPlacement2.placeShip(1, shipCount, "null")
     player = 1
     input("Press Enter and then switch players to continue...")
     print(chr(27) + "[2J")
