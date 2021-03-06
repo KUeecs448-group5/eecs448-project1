@@ -90,6 +90,7 @@ def runAI(shipCount, level):
             print("Computer:")
             Print.aiTopMap(player)
             print()
+            Print.aiBottomMap(player)
             endGame = True
 
 # user input

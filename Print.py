@@ -92,20 +92,25 @@ def aiTopMap(player):
 
 
 def aiBottomMap(player):
-    shipArr = aiPlacement.AIshipArr
-    shotArr = shotDetection.p1shotArr
+    if player == 1:
+        shipArr = shipPlacement2.p1shipArr
+        shotArr = easyShotDetection.p2shotArr
+    else:
+        shipArr = aiPlacement.AIshipArr
+        shotArr = easyShotDetection.p1shotArr
     print("Computer ships:")
     print("  A B C D E F G H I J")
-
-# implemented ai place ships board
     for i in range(0, 10):
-        if (i < 9):
+        if(i < 9):
             print("", i+1, end="")
         else:
             print(i+1, end="")
         for j in range(0, 10):
-            if aiPlacement.AIshipArr[i][j] == 0:
-                print(colored("^ ", "blue"), end="")
-            elif aiPlacement.AIshipArr[i][j] != 0:
-                print(colored("* ", "white", "on_grey"), end="")
-        print();
+            if shipArr[i][j] == 0:
+                print(colored("^ ", 'blue'), end ="")
+            elif shotArr[i][j] == 1 and not shipArr[i][j] == 0:
+                print(colored("* ", 'red', 'on_grey'), end ="")
+            elif shotArr[i][j] == 0 and not shipArr[i][j] == 0:
+                print(colored("* ", 'white', 'on_grey'), end ="")
+            #elif statement for sunk ship - #; requires isSunk() function and ship object
+        print()
