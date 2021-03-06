@@ -114,7 +114,6 @@ def runAI(shipCount, level):
                 print(chr(27) + "[2J")
 
 # CODE TO ASK PLAYER WHAT GAME THEY WANT TO PLAY
-
 userInput = "0"
 level = ""
 
