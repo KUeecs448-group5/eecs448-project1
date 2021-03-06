@@ -53,36 +53,6 @@ def run(shipCount):
                 player = 1
                 print(chr(27) + "[2J")
 
-# user input
-userInput = "0"
-level = ""
-
-print("Please give the number of people that will be playing.")
-print();
-
-while userInput != "1" and userInput != "2":
-    userInput = input("Type '1' if you want to play against the computer, or '2' if you want to play against another person. ")
-    print()
-    if (userInput != "1" and userInput != "2"):
-        print("Invalid input. Please try again ")
-        print()
-
-print(colored("BATTLESHIP", 'blue', 'on_grey'))
-print()
-repeat = True
-while repeat == True:
-    repeat = False
-    shipCount = input("Enter ship count [1-6]: ")
-    if not shipCount.isnumeric():
-        print("Invalid input (not an integer). Try again")
-        repeat = True
-    elif int(shipCount) > 6 or int(shipCount) < 1:
-        print("Invalid input. Try again")
-        repeat = True
-    winCount = 0
-    for i in range(1,int(shipCount)+1):
-        winCount = winCount + i
-
 def runAI(shipCount, level):
     """
     implements Computer-based version of the game every method of battleship game and checks for winner every turn
@@ -140,6 +110,36 @@ def runAI(shipCount, level):
             else:
                 player = 1
                 print(chr(27) + "[2J")
+
+# user input
+userInput = "0"
+level = ""
+
+print("Please give the number of people that will be playing.")
+print();
+
+while userInput != "1" and userInput != "2":
+    userInput = input("Type '1' if you want to play against the computer, or '2' if you want to play against another person. ")
+    print()
+    if (userInput != "1" and userInput != "2"):
+        print("Invalid input. Please try again ")
+        print()
+
+print(colored("BATTLESHIP", 'blue', 'on_grey'))
+print()
+repeat = True
+while repeat == True:
+    repeat = False
+    shipCount = input("Enter ship count [1-6]: ")
+    if not shipCount.isnumeric():
+        print("Invalid input (not an integer). Try again")
+        repeat = True
+    elif int(shipCount) > 6 or int(shipCount) < 1:
+        print("Invalid input. Try again")
+        repeat = True
+    winCount = 0
+    for i in range(1,int(shipCount)+1):
+        winCount = winCount + i
 
 
 if userInput == "1":
