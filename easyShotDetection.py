@@ -35,10 +35,10 @@ p2shotArr = [
 
 ###### HARD AI CODE #######
 def hardShot(player):
-    # placesHit [
-    #     [],
-    #     []
-    # ]
+    placesHit = [
+        [],
+        []
+    ]
     enemyShipArr = shipPlacement2.p1shipArr
     i = 0
     j = 0
