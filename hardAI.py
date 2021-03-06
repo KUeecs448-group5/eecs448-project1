@@ -66,20 +66,20 @@ playerShipsArr = [
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
-i = 0
-j = 0
 
-while i < 10:
-    while j < 10:
-        if playerShipsArr[i][j] == 1 and shotArrAI[i][j] == 0:
-            shotArrAI[i][j] = 1
-            j = 10
-            i = 10
-        j = j + 1
+def hitShip():
+    i = 0
     j = 0
-    i = i + 1
 
-print(shotArrAI)
+    while i < 10:
+        while j < 10:
+            if playerShipsArr[i][j] == 1 and shotArrAI[i][j] == 0:
+                shotArrAI[i][j] = 1
+                return (i, j)
+            j = j + 1
+        j = 0
+        i = i + 1
+    return(10,10)
 
 """
 test ship that runs through a player ship array and changes the shotArrAI coordinate
