@@ -155,7 +155,6 @@ def placeShip(player, shipCount, level):
     print()
     print("Current ship placement:")
     if level == "easy" or level == "medium" or level == "hard":
-        print("New level")
         Print.aiBottomMap(1)
     else:
         Print.printBottomMap(player + 1)
