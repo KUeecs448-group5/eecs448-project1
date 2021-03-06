@@ -125,6 +125,6 @@ def shot(player):
         if player == 1:
             print("Player 1: ", end="")
         else:
-            print("Player 2: ", end="")
+            print("Computer: ", end="")
         print("Shot missed.")
         input("Switch players then press Enter to continue...")
