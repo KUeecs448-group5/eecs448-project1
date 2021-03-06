@@ -49,6 +49,8 @@ def hardShot(player):
                 input("Shot Hit!")
                 input("Switch players then press Enter to continue...")
                 print(chr(27) + "[2J")
+                placesHit[0].append(i)
+                placesHit[1].append(j)
                 return;
             j = j + 1
         j = 0
