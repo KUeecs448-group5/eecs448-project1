@@ -139,7 +139,7 @@ def runAI(shipCount, level):
                 print("\nComputer Wins!\n")
             else:
                 player = 1
-                # print(chr(27) + "[2J")
+                print(chr(27) + "[2J")
 
 
 if userInput == "1":
