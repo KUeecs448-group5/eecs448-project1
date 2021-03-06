@@ -91,8 +91,10 @@ def runAI(shipCount, level):
             Print.aiTopMap(player)
             print()
             Print.aiBottomMap(player)
-            # easyShotDetection.shot(player)
-            easyShotDetection.hardShot((player - 1))
+            if level == "easy":
+                easyShotDetection.shot(player)
+            elif level == "hard":
+                easyShotDetection.hardShot((player - 1))
             endGame = True
 
 # user input
