@@ -19,9 +19,6 @@ AIshipArr = [
 ]
 
 
-playArr = [shipPlacement2.p1shipArr,AIshipArr]
-
-
 # userInput to be called repeatedly in case of a bad ship placement
 def userInput(i):
     """
@@ -102,62 +99,3 @@ placeShip(5)
 for i in range(10):
     print(AIshipArr[i])
 '''
-
-def shipPersonDefiner(x,y,z,t,p):#looks at the request space, if available places ship and returns true, otherwise returns false
-#x,y,z,t,p = xCoord, yCoord, orientation, size, player
-#first check if ship is hanging off end
-  """
-  Helper method to placeShip, makes sure placeShip is in valid area.
-  x:xCoord
-  y:yCoord
-  z:orientation(vertical or horizontal)
-  t: size(size of ship)
-  player: tells program whose turn it is
-  Precondition: Ship object initialized
-  Postcondition: Ship object is in valid position or is rejected
-  """
-  if z == 0: #check horizontal hang off
-    if (x + t - 1) > 9:
-      return False
-  if z == 1: #check vertical hang off
-    if (y + t - 1) > 9:
-      return False
-  if playArr[p][y][x] != 0: #check if first node is occupied
-    return False
-  if z == 0: #check horizontal occupied
-    for i in range(1,t): #should run from 1 to t-1
-      if playArr[p][y][x+i] != 0:
-        return False
-    for i in range(0,t): #if it runs this for loop, the ship is in a valid position and the array can be changed
-      playArr[p][y][x+i] = t #using t as a unique marker for each ship
-  if z == 1: #same thing for vertical
-    for i in range(1,t): #should run from 1 to t-1
-      if playArr[p][y+i][x] != 0:
-        return False
-    for i in range(0,t):
-      playArr[p][y+i][x] = t
-  return True
-
-def placePersonShip(player, shipCount):
-  """
-  places Ship object on board with shipDefiner and userInput methods.
-  player: tells program whose turn it is
-  shipCount: number of ships(potentially of various sizes) that each player has.
-  Precondition: player variable initialized, shipCount value from 1-6
-  Postcondition: ship object is placed on board
-  """
-  #player 1 = 0, player 2 = 1
-  for i in range(1, int(shipCount)+1): #i = size of ship currently placing
-    input = userInput(i)#fetch orientation and coordinates
-    xVar,yVar,fVar = input
-    test = shipPersonDefiner(xVar,yVar,fVar,i,player)
-    while test == False: #run it again if placement failed
-      print('Your Ship failed to be placed, please verify you are placing your ship in a valid location. Restarting the process.')
-      input = userInput(i)
-      xVar,yVar,fVar = input
-      test = shipPersonDefiner(xVar,yVar,fVar,i,player)
-    objArr[player].append(Ship(i,player))
-    print()
-    print("Current ship placement:")
-    Print.aiBottomMap(player + 1)
-    print()

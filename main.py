@@ -95,7 +95,7 @@ def runAI(shipCount, level):
     print()
     print("Player 1:")
     print()
-    aiPlacement.placePersonShip(0, shipCount)
+    shipPlacement2.placeShip(0, shipCount)
     input("Press Enter and then switch players to continue...")
     print(chr(27) + "[2J")
 
