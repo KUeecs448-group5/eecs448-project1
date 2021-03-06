@@ -46,12 +46,13 @@ def hardShot(player):
         while j < 10:
             if enemyShipArr[i][j] != 0:
                 shipPlacement2.objArr[player - 1][enemyShipArr[i][j] - 1].hit()
-                input("Shot Hit!")
                 input("Switch players then press Enter to continue...")
                 print(chr(27) + "[2J")
                 # Append to array https://www.journaldev.com/33185/python-add-to-array
                 placesHit[0].append(i)
                 placesHit[1].append(j)
+                global p2shotCount
+                p2shotCount = p2shotCount + 1
                 return;
             j = j + 1
         j = 0
