@@ -35,13 +35,15 @@ p2shotArr = [
 
 ###### HARD AI CODE #######
 def hardShot(player):
-    enemyShipArr = aiPlacement.AIshipArr
+    shotArr = p2shotArr
+    enemyShipArr = shipPlacement2.p1shipArr
     i = 0
     j = 0
     while i < 10:
         while j < 10:
-            if shipPlacement2.p1shipArr[i][j] != 0:
-                shipPlacement2.objArr[player - 1][enemyShipArr[i][j] - 1].hit()
+            if not enemyShipArr[j][i] == 0 and not shotArr[j][i] == 0:
+                shipPlacement2.objArr[player - 1][enemyShipArr[j][i] - 1].hit()
+                print("Shot Hit!")
             j = j + 1
         j = 0
         i = i+1
