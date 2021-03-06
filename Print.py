@@ -67,8 +67,12 @@ def printBottomMap(player):
 
 # AI MAPS
 def aiTopMap(player):
-    enemyShipArr = shipPlacement2.p1shipArr
-    shotArr = easyShotDetection.p2shotArr
+    if player == 1:
+        enemyShipArr = aiPlacement.AIshipArr
+        shotArr = easyShotDetection.p1shotArr
+    elif player == 2:
+        enemyShipArr = shipPlacement2.p1shipArr
+        shotArr = easyShotDetection.p2shotArr
     print("Shots taken at enemy:")
     print("  A B C D E F G H I J")
     for i in range(0, 10):

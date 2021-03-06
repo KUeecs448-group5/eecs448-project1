@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import easy, shipPlacement2, time
+import easy, shipPlacement2, time, aiPlacement
 
 p1shotCount = 0
 p2shotCount = 0
@@ -43,7 +43,7 @@ def shot(player):
     """
     if player == 1:
         shotArr = p1shotArr
-        enemyShipArr = shipPlacement2.p2shipArr
+        enemyShipArr = aiPlacement.AIshipArr
     else:
         shotArr = p2shotArr
         enemyShipArr = shipPlacement2.p1shipArr
@@ -115,7 +115,7 @@ def shot(player):
         elif player == 2:
             global p2shotCount
             p2shotCount = p2shotCount + 1
-            print("Player 2: ", end="")
+            print("Computer: ", end="")
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
         input("Switch players then press Enter to continue...")
