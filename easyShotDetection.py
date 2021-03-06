@@ -139,13 +139,11 @@ def shot(player):
             print("Player 1: ", end="")
             global p1shotCount
             p1shotCount = p1shotCount + 1
-            shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()
         elif player == 2:
             global p2shotCount
             p2shotCount = p2shotCount + 1
             print("Computer: ", end="")
-            shipPlacement2.objArr[player - 2][enemyShipArr[yCoord][xCoord] - 1].hit()
-        # shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
+        shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
         input("Switch players then press Enter to continue...")
         print(chr(27) + "[2J")
     else:
