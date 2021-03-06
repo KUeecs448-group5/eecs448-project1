@@ -95,10 +95,11 @@ def aiBottomMap(player):
     if player == 1:
         shipArr = shipPlacement2.p1shipArr
         shotArr = easyShotDetection.p2shotArr
+        print("Your ships:")
     else:
         shipArr = aiPlacement.AIshipArr
         shotArr = easyShotDetection.p1shotArr
-    print("Computer ships:")
+        print("Computer ships:")
     print("  A B C D E F G H I J")
     for i in range(0, 10):
         if(i < 9):
