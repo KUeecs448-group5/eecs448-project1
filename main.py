@@ -36,7 +36,7 @@ def run(shipCount):
         Print.printTopMap(player)
         print()
         Print.printBottomMap(player)
-        easyShotDetection.shot(player)
+        shotDetection.shot(player)
 
         #check win condition and switch players if not
         if player == 1:
