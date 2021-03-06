@@ -56,6 +56,7 @@ def run(shipCount):
 print(chr(27) + "[2J")
 print(colored("BATTLESHIP", 'blue', 'on_grey'))
 print()
+
 repeat = True
 while repeat == True:
         repeat = False
@@ -69,6 +70,13 @@ while repeat == True:
         winCount = 0
         for i in range(1,int(shipCount)+1):
           winCount = winCount + i
+
+userInput = input("If you would like to play against the computer type 'computer', otherwise type any characters for a two-player game ")
+
+if userInput == "computer":
+    runAI(shipCount)
+else:
+    run(shipCount)
 
 # run(shipCount)
 
@@ -123,4 +131,4 @@ def runAI(shipCount):
                 player = 1
                 print(chr(27) + "[2J")
 
-runAI(shipCount)
+# runAI(shipCount)
