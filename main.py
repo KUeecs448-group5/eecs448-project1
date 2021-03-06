@@ -86,7 +86,7 @@ def aiRun(shipCount):
         Print.printTopMap(player)
         print()
         Print.printBottomMap(player)
-        shotDetection.shot(player)
+        easyShotDetection.shot(player)
 
         #check win condition and switch players if not
         if player == 1:
