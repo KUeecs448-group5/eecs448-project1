@@ -13,10 +13,10 @@ def printTopMap(player):
     """
     if player == 1:
         enemyShipArr = shipPlacement2.p2shipArr
-        shotArr = shotDetection.p1shotArr
+        shotArr = shotDetection.p1shotArr # original shotDetection.p1shotArr
     elif player == 2:
         enemyShipArr = shipPlacement2.p1shipArr
-        shotArr = shotDetection.p2shotArr
+        shotArr = shotDetection.p2shotArr # original shotDetection.p2shotArr
     print("Shots taken at enemy:")
     print("  A B C D E F G H I J")
     for i in range(0, 10):
@@ -64,4 +64,4 @@ def printBottomMap(player):
             elif shotArr[i][j] == 0 and not shipArr[i][j] == 0:
                 print(colored("* ", 'white', 'on_grey'), end ="")
             #elif statement for sunk ship - #; requires isSunk() function and ship object
-        print() 
+        print()

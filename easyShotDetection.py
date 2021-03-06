@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import easy, shipPlacement2, time
+import easy, shipPlacement2, time, shotDetection
 
 p1shotCount = 0
 p2shotCount = 0
@@ -42,10 +42,10 @@ def shot(player):
     Postcondition: depending on which player, one value of opposing player is changed
     """
     if player == 1:
-        shotArr = p1shotArr
+        shotArr = shotDetection.p1shotArr # original p1shotArr
         enemyShipArr = shipPlacement2.p2shipArr
     else:
-        shotArr = p2shotArr
+        shotArr = shotDetection.p2shotArr # original p2shotArr
         enemyShipArr = shipPlacement2.p1shipArr
 
     # shot selection
