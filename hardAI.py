@@ -81,6 +81,7 @@ def hitShip():
         i = i + 1
     return(10,10)
 
+
 """
 test ship that runs through a player ship array and changes the shotArrAI coordinate
  to one when a ship is detected
