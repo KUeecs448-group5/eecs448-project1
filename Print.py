@@ -70,7 +70,7 @@ def aiTopMap(player):
     if player == 1:
         enemyShipArr = aiPlacement.AIshipArr
         shotArr = easyShotDetection.p1shotArr
-    elif player == 2:
+    else:
         enemyShipArr = shipPlacement2.p1shipArr
         shotArr = easyShotDetection.p2shotArr
     print("Shots taken at enemy:")
