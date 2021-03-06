@@ -78,8 +78,6 @@ if userInput == "computer":
 else:
     run(shipCount)
 
-# run(shipCount)
-
 def runAI(shipCount):
     """
     implements every method of battleship game and checks for winner every turn
@@ -130,5 +128,3 @@ def runAI(shipCount):
             else:
                 player = 1
                 print(chr(27) + "[2J")
-
-# runAI(shipCount)
