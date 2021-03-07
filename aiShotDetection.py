@@ -57,7 +57,7 @@ def shot(player):
             if player == 1:
                 xChar = input('Enter a column [A-J] to fire upon: ')
             else:
-                ai = 0
+                ai = 2
                 if( ai == 0):
                     xShot = easy.getShot()
                     xChar = xShot[0]
