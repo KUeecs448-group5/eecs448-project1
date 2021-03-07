@@ -5,28 +5,28 @@ import Print
 from shipObject import Ship
 
 p1shipArr = [
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
 
 p2shipArr = [
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
-             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
              [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             ]
 playArr = [p1shipArr,p2shipArr]
@@ -103,7 +103,7 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if available places ship
   x:xCoord
   y:yCoord
   z:orientation(vertical or horizontal)
-  t: size(size of ship) 
+  t: size(size of ship)
   player: tells program whose turn it is
   Precondition: Ship object initialized
   Postcondition: Ship object is in valid position or is rejected
@@ -127,8 +127,8 @@ def shipDefiner(x,y,z,t,p):#looks at the request space, if available places ship
       if playArr[p][y+i][x] != 0:
         return False
     for i in range(0,t):
-      playArr[p][y+i][x] = t 
-  return True    
+      playArr[p][y+i][x] = t
+  return True
 
 objArr = [[], []] #player, size-1
 
@@ -146,7 +146,7 @@ def placeShip(player, shipCount):
     input = userInput(i)#fetch orientation and coordinates
     xVar,yVar,fVar = input
     test = shipDefiner(xVar,yVar,fVar,i,player)
-    while test == False: #run it again if placement failed 
+    while test == False: #run it again if placement failed
       print('Your Ship failed to be placed, please verify you are placing your ship in a valid location. Restarting the process.')
       input = userInput(i)
       xVar,yVar,fVar = input
@@ -156,4 +156,3 @@ def placeShip(player, shipCount):
     print("Current ship placement:")
     Print.printBottomMap(player + 1)
     print()
-  
