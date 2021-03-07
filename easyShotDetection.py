@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import Easy, shipPlacement2, time, aiPlacement
+import easy, shipPlacement2, time, shotDetection
 
 p1shotCount = 0
 p2shotCount = 0
@@ -33,32 +33,6 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
-###### HARD AI CODE #######
-def hardShot(player):
-    # -1's initalize arrays with dummy values
-    rowHit = [-1]
-    columnHit = [-1]
-    enemyShipArr = shipPlacement2.p1shipArr
-    i = 0
-    j = 0
-    while i < 10:
-        while j < 10:
-            # len function https://stackoverflow.com/questions/21030116/python-test-average-calculator-returen-error-list-object-has-no-attribute-len
-            if enemyShipArr[i][j] != 0 and rowHit[len(rowHit) - 1] != i or columnHit[len(columnHit) - 1] != j:
-                shipPlacement2.objArr[player - 2][enemyShipArr[j][i] - 1].hit()
-                print("Shot Hit!")
-                input("Switch players then press Enter to continue...")
-                print(chr(27) + "[2J")
-                # Append to array https://www.journaldev.com/33185/python-add-to-array
-                rowHit.append(i)
-                columnHit.append(j)
-                global p2shotCount
-                p2shotCount = p2shotCount + 1
-                return;
-            j = j + 1
-        j = 0
-        i = i+1
-
 
 def shot(player):
     """
@@ -68,10 +42,10 @@ def shot(player):
     Postcondition: depending on which player, one value of opposing player is changed
     """
     if player == 1:
-        shotArr = p1shotArr
-        enemyShipArr = aiPlacement.AIshipArr
+        shotArr = shotDetection.p1shotArr # original p1shotArr
+        enemyShipArr = shipPlacement2.p2shipArr
     else:
-        shotArr = p2shotArr
+        shotArr = shotDetection.p2shotArr # original p2shotArr
         enemyShipArr = shipPlacement2.p1shipArr
 
     # shot selection
@@ -141,7 +115,7 @@ def shot(player):
         elif player == 2:
             global p2shotCount
             p2shotCount = p2shotCount + 1
-            print("Computer: ", end="")
+            print("Player 2: ", end="")
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
         input("Switch players then press Enter to continue...")
@@ -151,6 +125,6 @@ def shot(player):
         if player == 1:
             print("Player 1: ", end="")
         else:
-            print("Computer: ", end="")
+            print("Player 2: ", end="")
         print("Shot missed.")
         input("Switch players then press Enter to continue...")
