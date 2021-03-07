@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import easy, shipPlacement2, time ,hardAI, shotDetection
+import easy, shipPlacement2, time, shotDetection
 
 p1shotCount = 0
 p2shotCount = 0
@@ -57,35 +57,27 @@ def shot(player):
             if player == 1:
                 xChar = input('Enter a column [A-J] to fire upon: ')
             else:
-                ai = 0
-                if( ai == 0):
-                    xShot = easy.getShot()
-                    xChar = xShot[0]
-                #elif( ai == 1):
-                   # xShot = medium.getShot()
-                   # xChar = xShot[0]
-                elif (ai == 2):
-                    xShot = hardAI.hitShip()
-                    xChar = xShot[0]
-            if xChar == "A" or xChar == "a" or xChar == 0:
+                xShot = easy.getShot()
+                xChar = xShot[0]
+            if xChar == "A" or xChar == "a":
                 xCoord = 0
-            elif xChar == "B" or xChar == "b" or xChar == 1:
+            elif xChar == "B" or xChar == "b":
                 xCoord = 1
-            elif xChar == "C" or xChar == "c" or xChar == 2:
+            elif xChar == "C" or xChar == "c":
                 xCoord = 2
-            elif xChar == "D" or xChar == "d" or xChar == 3:
+            elif xChar == "D" or xChar == "d":
                 xCoord = 3
-            elif xChar == "E" or xChar == "e" or xChar == 4:
+            elif xChar == "E" or xChar == "e":
                 xCoord = 4
-            elif xChar == "F" or xChar == "f" or xChar == 5:
+            elif xChar == "F" or xChar == "f":
                 xCoord = 5
-            elif xChar == "G" or xChar == "g" or xChar == 6:
+            elif xChar == "G" or xChar == "g":
                 xCoord = 6
-            elif xChar == "H" or xChar == "h" or xChar == 7:
+            elif xChar == "H" or xChar == "h":
                 xCoord = 7
-            elif xChar == "I" or xChar == "i" or xChar == 8:
+            elif xChar == "I" or xChar == "i":
                 xCoord = 8
-            elif xChar == "J" or xChar == "j" or xChar == 9:
+            elif xChar == "J" or xChar == "j":
                 xCoord = 9
             else:
                 print("Invalid input. Try again")
