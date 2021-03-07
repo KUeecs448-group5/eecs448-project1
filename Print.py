@@ -1,4 +1,4 @@
-import shipPlacement2, shotDetection, aiPlacement, easyShotDetection
+import shipPlacement2, shotDetection, aiPlacement, aiShotDetection
 from termcolor import colored
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
