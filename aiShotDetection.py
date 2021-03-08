@@ -66,7 +66,8 @@ def shot(player):
                 elif(ai == 1):
                     xShot = hardAI.hitShip()
                     xChar = xShot[0]
-                    print(isHit)
+                    if isHit:
+                        print("In isHit conditional")
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
                     print(xShot)
