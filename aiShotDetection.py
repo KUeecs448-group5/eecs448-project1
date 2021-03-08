@@ -50,6 +50,8 @@ def shot(player):
 
     # shot selection
     repeatAll = True
+    # variable for if the last shot was a hit.  This is for the orthogonal shooting on the medium level
+    isHit = False;
     while repeatAll == True:
         repeat = True
         while repeat == True:
@@ -61,8 +63,10 @@ def shot(player):
                 if (ai == 0):
                     xShot = easy.getShot()
                     xChar = xShot[0]
-                # elif(ai == 1):
-                #    xShot = Medium.getShot()
+                elif(ai == 1):
+                    xShot = easy.getShot()
+                    if (isHit)
+                    Medium.AIshooter(xShot[0], xShot[1])
                    # xChar = xShot[0]
                 elif (ai == 2):
                     xShot = hardAI.hitShip()

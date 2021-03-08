@@ -26,8 +26,8 @@ y_orig = 0
     coordinate of initial hit of a ship
 """
 
-# x_ref = 0
-# y_ref = 0
+x_ref = 0
+y_ref = 0
 """
     coordinate from which we are looking, not always the initial hit
 """
@@ -49,8 +49,12 @@ hit = False
 
 """
 
-def AIshooter(x_ref, y_ref):
+def AIshooter(xCoord, yCoord):
     global next_shot, orientation, x_orig, y_orig, x_ref, y_ref, hit
+
+    hit = True
+    x_orig = xCoord
+    y_orig = yCoord
 
     if next_shot == 1:
         look_up(x_ref, y_ref)
