@@ -46,7 +46,7 @@ shotArrAI = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
-playerShipArr = shipPlacement2.p1shipArr
+
 
 """
 playerShipsArr = [
@@ -65,6 +65,8 @@ playerShipsArr = [
 
 
 def hitShip():
+    playerShipArr = shipPlacement2.p1shipArr
+
     i = 0
     j = 0
 
@@ -72,7 +74,10 @@ def hitShip():
     yCoord = 0
     while i < 10:
         while j < 10:
-            if playerShipArr[i][j] == 1 and shotArrAI[i][j] == 0:
+            print(playerShipArr)
+            print(shotArrAI)
+            print()
+            if playerShipArr[i][j] != 0 and shotArrAI[i][j] == 0:
                 shotArrAI[i][j] = 1
                 xCoord = i
                 yCoord = j
