@@ -77,8 +77,8 @@ def hitShip():
             # print(playerShipArr)
             # print(shotArrAI)
             # print()
-            if playerShipArr[i][j] != 0 and shotArrAI[i][j] == 0:
-                shotArrAI[i][j] = 1
+            if playerShipArr[j][i] != 0 and shotArrAI[j][i] == 0:
+                shotArrAI[j][i] = 1
                 xCoord = i
                 yCoord = j
                 return (xCoord, yCoord)
