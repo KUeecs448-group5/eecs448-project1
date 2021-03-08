@@ -32,9 +32,6 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
-# variable to keep if last shot was a hit
-isHit = False
-hitCoordinates = [10, 10]
 
 def shot(player):
     """
@@ -67,11 +64,6 @@ def shot(player):
                 elif(ai == 1):
                     xShot = hardAI.hitShip()
                     xChar = xShot[0]
-                    # if isHit:
-                    #     # print(hitCoordinates[0])
-                    #     # print(hitCoordinates[1])
-                    #     # call medium AI
-                    #     xShot = Medium.simpleAIShooter(hitCoordinates[0], hitCoordinates[1])
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
                     print(xShot)
@@ -133,11 +125,6 @@ def shot(player):
             global p2shotCount
             p2shotCount = p2shotCount + 1
             print("Player 2: ", end="")
-            # setting variable for was the last shot a hit
-            global isHit
-            isHit = True
-            hitCoordinates[0] = xCoord
-            hitCoordinates[1] = yCoord
 
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
