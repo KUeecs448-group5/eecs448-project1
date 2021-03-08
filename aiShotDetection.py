@@ -61,6 +61,8 @@ def shot(player):
                     xShot = easy.getShot()
                     xChar = xShot[0]
                 elif(ai == 1):
+                    xShot = easy.getShot()
+                    xChar = xShot[0]
                     print("Medium ai")
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
