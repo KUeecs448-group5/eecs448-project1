@@ -32,6 +32,8 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
+# variable to keep if last shot was a hit
+isHit = False;
 
 def shot(player):
     """
@@ -40,6 +42,7 @@ def shot(player):
     Precondition: player variable to be initialized
     Postcondition: depending on which player, one value of opposing player is changed
     """
+
     if player == 1:
         shotArr = shotDetection.p1shotArr # original p1shotArr
         enemyShipArr = shipPlacement2.p2shipArr
@@ -61,9 +64,9 @@ def shot(player):
                     xShot = easy.getShot()
                     xChar = xShot[0]
                 elif(ai == 1):
-                    xShot = easy.getShot()
+                    xShot = hardAI.hitShip()
                     xChar = xShot[0]
-                    print("Medium ai")
+                    print(isHit)
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
                     print(xShot)
@@ -125,6 +128,9 @@ def shot(player):
             global p2shotCount
             p2shotCount = p2shotCount + 1
             print("Player 2: ", end="")
+            # setting variable for was the last shot a hit
+            global isHit
+            isHit = True
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
         input("Switch players then press Enter to continue...")
