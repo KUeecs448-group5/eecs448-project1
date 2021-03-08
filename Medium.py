@@ -1,7 +1,7 @@
 # KayLee Mitchell
 # Medium AI control
 
-# import random, Easy
+import random, easy, aiShotDetection
 
 
 next_shot = 0
