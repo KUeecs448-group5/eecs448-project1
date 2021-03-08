@@ -58,11 +58,11 @@ def shot(player):
                 xChar = input('Enter a column [A-J] to fire upon: ')
             else:
                 ai = 2
-                if( ai == 0):
+                if (ai == 0):
                     xShot = easy.getShot()
                     xChar = xShot[0]
-                #elif( ai == 1):
-                   # xShot = medium.getShot()
+                # elif(ai == 1):
+                #    xShot = Medium.getShot()
                    # xChar = xShot[0]
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
