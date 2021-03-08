@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import easy, shipPlacement2, time ,hardAI, shotDetection
+import easy, shipPlacement2, time ,hardAI, shotDetection, Medium
 
 p1shotCount = 0
 p2shotCount = 0
@@ -33,6 +33,8 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+# variable for if the last shot was a hit.  This is for the orthogonal shooting on the medium level
+isHit = False;
 
 def shot(player):
     """
@@ -41,6 +43,8 @@ def shot(player):
     Precondition: player variable to be initialized
     Postcondition: depending on which player, one value of opposing player is changed
     """
+    # ai variable
+    ai = 0
     if player == 1:
         shotArr = shotDetection.p1shotArr # original p1shotArr
         enemyShipArr = shipPlacement2.p2shipArr
@@ -50,8 +54,6 @@ def shot(player):
 
     # shot selection
     repeatAll = True
-    # variable for if the last shot was a hit.  This is for the orthogonal shooting on the medium level
-    isHit = False;
     while repeatAll == True:
         repeat = True
         while repeat == True:
@@ -64,12 +66,14 @@ def shot(player):
                     xShot = easy.getShot()
                     xChar = xShot[0]
                 elif(ai == 1):
-                    if isHit:
-                        xShot = Medium.AIshooter(xShot[0], xShot[1])
-                        print("AIshooter called")
-                    else:
-                        xShot = easy.getShot()
-                    xChar = xShot[0]
+                    # if not enemyShipArr[yCoord][xCoord] == 0 and not shotArr[yCoord][xCoord] == 0:
+                    #     isHit = True;
+                    # elif isHit:
+                    #     eShot = Medium.AIshooter()
+                    # elif enemyShipArr[yCoord][xCoord] == 0 or shotArr[yCoord][xCoord] == 0:
+                    #     xShot = easy.getShot()
+                    # xChar = xShot[0]
+                    print("Medium ai")
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
                     print(xShot)
