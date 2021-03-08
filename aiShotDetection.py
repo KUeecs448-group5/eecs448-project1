@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import Easy, shipPlacement2, time ,hardAI, shotDetection
+import easy, shipPlacement2, time ,hardAI, shotDetection
 
 p1shotCount = 0
 p2shotCount = 0
@@ -59,7 +59,7 @@ def shot(player):
             else:
                 ai = 2
                 if( ai == 0):
-                    xShot = Easy.getShot()
+                    xShot = easy.getShot()
                     xChar = xShot[0]
                 #elif( ai == 1):
                    # xShot = medium.getShot()
