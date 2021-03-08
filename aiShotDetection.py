@@ -33,6 +33,8 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+isHit = False
+
 def shot(player):
     """
     Allows Player to shoot, depending on which player
@@ -64,6 +66,7 @@ def shot(player):
                 elif(ai == 1):
                     xShot = hardAI.hitShip()
                     xChar = xShot[0]
+                    print(isHit)
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
                     print(xShot)
@@ -125,6 +128,8 @@ def shot(player):
             global p2shotCount
             p2shotCount = p2shotCount + 1
             print("Player 2: ", end="")
+            global isHit
+            isHit = True
 
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
