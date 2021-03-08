@@ -81,7 +81,7 @@ def AIshooter(xCoord, yCoord):
             x_ref = x_orig
             y_ref = y_orig
 
-    return
+    return x_ref, y_ref;
 
 
 
