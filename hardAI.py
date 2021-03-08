@@ -74,9 +74,9 @@ def hitShip():
     yCoord = 0
     while i < 10:
         while j < 10:
-            print(playerShipArr)
-            print(shotArrAI)
-            print()
+            # print(playerShipArr)
+            # print(shotArrAI)
+            # print()
             if playerShipArr[i][j] != 0 and shotArrAI[i][j] == 0:
                 shotArrAI[i][j] = 1
                 xCoord = i
@@ -116,4 +116,4 @@ while i < 10:
     j = 0
     i = i+1
 print(shotArrAI)
-""" 
+"""
