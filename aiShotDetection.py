@@ -65,10 +65,10 @@ def shot(player):
                     xChar = xShot[0]
                 elif(ai == 1):
                     # hitCoordinates = (xCoord, yCoord)
-                    if isHit:
-                    #     # Med.simpleAIShooter(hitCoordinates[0], hitCoordinates[1])
-                        print(isHit)
-                    else:
+                    # if isHit:
+                    # #     # Med.simpleAIShooter(hitCoordinates[0], hitCoordinates[1])
+                    #     print(isHit)
+                    # else:
                         xShot = hardAI.hitShip()
                         xChar = xShot[0]
                 elif (ai == 2):
