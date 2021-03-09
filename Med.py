@@ -110,7 +110,7 @@ def simpleLookUp(x, y):
     global x_ref, y_ref
     x_ref = x
     y_ref = y - 1
-    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+    if (x_ref < 10 and y_ref < 10):
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
@@ -123,7 +123,7 @@ def simpleLookDown(x, y):
     x_ref = x
     y_ref = y + 1
 
-    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+    if (x_ref < 10 and y_ref < 10):
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
@@ -136,7 +136,7 @@ def simpleLookRight(x, y):
     x_ref = x + 1
     y_ref = y
 
-    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+    if (x_ref < 10 and y_ref < 10):
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
@@ -148,7 +148,7 @@ def simpleLookLeft(x, y):
     x_ref = x - 1
     y_ref = y
 
-    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+    if (x_ref < 10 and y_ref < 10):
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
