@@ -16,7 +16,7 @@ shotArrAI = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
-next_shot = 0
+next_shot = 1
 """
     0 => next shot is a random shot
     1 => next shot is looking up
@@ -63,18 +63,87 @@ hit = False
 playerShipArr = shipPlacement2.p1shipArr
 
 def simpleAIShooter(xCoord, yCoord):
+    # pseudocode
+    # 1. set next_shot variable
     global next_shot
-    next_shot = 1
+    # if (next_shot == 0):
+    #     next_shot = 1
+    result = "Miss"
+    # 2. write conditional for next_shot
+    # 3. in conditional, check for appropriate position for hit
+        # 1. if hit
+        # 2. is miss
+    if next_shot != 0:
+        # corresponds to looking up
+        if next_shot == 1:
+            result = simpleLookUp(xCoord, yCoord)
+            if result != "Hit":
+                next_shot = 2
+            else:
+                next_shot = 0
 
-    if (next_shot == 1):
-        upHit = simpleLookUp(xCoord, yCoord)
+        elif next_shot == 2:
+            result = simpleLookRight(xCoord, yCoord)
+            if result != "Hit":
+                next_shot = 3
+            else:
+                next_shot = 0
 
-    return upHit
+        elif next_shot == 3:
+            result = simpleLookDown(xCoord, yCoord)
+            if result != "Hit":
+                next_shot = 4
+            else:
+                next_shot = 0
+
+        elif next_shot == 4:
+            result = simpleLookLeft(xCoord, yCoord)
+            next_shot = 0
+    else:
+        aiShotDetection.aiCoordinatesHitAt = [10, 10]
+        next_shot = 1
+
+    return [x_ref, y_ref]
+
 
 def simpleLookUp(x, y):
     global x_ref, y_ref
     x_ref = x
     y_ref = y - 1
+
+    if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+        shotArrAI[y_ref][x_ref] = 1
+        return "Hit"
+    else:
+        return "Miss"
+
+def simpleLookDown(x, y):
+    global x_ref, y_ref
+    x_ref = x
+    y_ref = y + 1
+
+    if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+        shotArrAI[y_ref][x_ref] = 1
+        return "Hit"
+    else:
+        return "Miss"
+
+
+def simpleLookRight(x, y):
+    global x_ref, y_ref
+    x_ref = x + 1
+    y_ref = y
+
+    if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+        shotArrAI[y_ref][x_ref] = 1
+        return "Hit"
+    else:
+        return "Miss"
+
+def simpleLookLeft(x, y):
+    global x_ref, y_ref
+    x_ref = x - 1
+    y_ref = y
 
     if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
         shotArrAI[y_ref][x_ref] = 1

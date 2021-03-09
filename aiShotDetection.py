@@ -67,11 +67,10 @@ def shot(player):
                     xShot = easy.getShot()
                     xChar = xShot[0]
                 elif(ai == 1):
-                    # hitCoordinates = (xCoord, yCoord)
-                    # if isHit:
-                    # #     # Med.simpleAIShooter(hitCoordinates[0], hitCoordinates[1])
-                    #     print(isHit)
-                    # else:
+                    if aiCoordinatesHitAt[0] != 10:
+                        xShot = Med.simpleAIShooter(aiCoordinatesHitAt[0], aiCoordinatesHitAt[1])
+                        xChar = xShot[0]
+                    else:
                         xShot = hardAI.hitShip()
                         xChar = xShot[0]
                 elif (ai == 2):
@@ -99,7 +98,7 @@ def shot(player):
             elif xChar == "J" or xChar == "j" or xChar == 9:
                 xCoord = 9
             else:
-                print("Invalid input. Try again")
+                print("Invalid input. Try again", xChar)
                 repeat = True
 
         repeat = True

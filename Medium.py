@@ -79,6 +79,13 @@ def AIshooter(xCoord, yCoord):
     x_orig = xCoord
     y_orig = yCoord
 
+    next_shot = 1
+    orientation = 2
+    # x_orig = shot[0]
+    # y_orig = shot[1]
+    x_ref = x_orig
+    y_ref = y_orig
+
     if next_shot == 1:
         look_up(x_ref, y_ref)
     elif next_shot == 2:
@@ -87,24 +94,24 @@ def AIshooter(xCoord, yCoord):
         look_down(x_ref, y_ref)
     elif next_shot == 4:
         look_left(x_ref, y_ref)
-    else:
-        # random shot, record x and y coordinate in tuple shot
-        if hit:
-            next_shot = 1
-            orientation = 2
-            # x_orig = shot[0]
-            # y_orig = shot[1]
-            x_ref = x_orig
-            y_ref = y_orig
-        else:
-            next_shot = 0
-            orientation = 2
-            x_orig = 0
-            y_orig = 0
-            x_ref = x_orig
-            y_ref = y_orig
+    # else:
+    #     # random shot, record x and y coordinate in tuple shot
+    #     if hit:
+    #         next_shot = 1
+    #         orientation = 2
+    #         # x_orig = shot[0]
+    #         # y_orig = shot[1]
+    #         x_ref = x_orig
+    #         y_ref = y_orig
+    #     else:
+    #         next_shot = 0
+    #         orientation = 2
+    #         x_orig = 0
+    #         y_orig = 0
+    #         x_ref = x_orig
+    #         y_ref = y_orig
 
-    return x_ref, y_ref;
+    return [x_ref, y_ref];
 
 def look_up(x,y):
     global next_shot, orientation, x_orig, y_orig, x_ref, y_ref, hit
