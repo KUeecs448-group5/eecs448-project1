@@ -71,7 +71,7 @@ def shot(player):
                         xShot = Med.simpleAIShooter(aiCoordinatesHitAt[0], aiCoordinatesHitAt[1])
                         xChar = xShot[0]
                     else:
-                        xShot = easy.getShot()
+                        xShot = hardAI.hitShip()
                         xChar = xShot[0]
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
@@ -121,7 +121,7 @@ def shot(player):
             repeatAll = True
 
         # For medium ai to make sure adjacent y index is a valid place on board
-        if yCoord == -1:
+        if yCoord == -1 or yCoord > 9:
             repeatAll = True
 
     # register shot

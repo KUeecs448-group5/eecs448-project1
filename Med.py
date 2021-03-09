@@ -110,24 +110,25 @@ def simpleLookUp(x, y):
     global x_ref, y_ref
     x_ref = x
     y_ref = y - 1
-
-    if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
-        shotArrAI[y_ref][x_ref] = 1
-        return "Hit"
-    else:
-        print("x_ref, y_ref", x_ref, y_ref)
-        return "Miss"
+    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+        if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+            shotArrAI[y_ref][x_ref] = 1
+            return "Hit"
+        else:
+            print("x_ref, y_ref", x_ref, y_ref)
+            return "Miss"
 
 def simpleLookDown(x, y):
     global x_ref, y_ref
     x_ref = x
     y_ref = y + 1
 
-    if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
-        shotArrAI[y_ref][x_ref] = 1
-        return "Hit"
-    else:
-        return "Miss"
+    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+        if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+            shotArrAI[y_ref][x_ref] = 1
+            return "Hit"
+        else:
+            return "Miss"
 
 
 def simpleLookRight(x, y):
@@ -135,19 +136,21 @@ def simpleLookRight(x, y):
     x_ref = x + 1
     y_ref = y
 
-    if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
-        shotArrAI[y_ref][x_ref] = 1
-        return "Hit"
-    else:
-        return "Miss"
+    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+        if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+            shotArrAI[y_ref][x_ref] = 1
+            return "Hit"
+        else:
+            return "Miss"
 
 def simpleLookLeft(x, y):
     global x_ref, y_ref
     x_ref = x - 1
     y_ref = y
 
-    if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
-        shotArrAI[y_ref][x_ref] = 1
-        return "Hit"
-    else:
-        return "Miss"
+    if (0 <= x_ref < 10 and 0 <= y_ref < 10):
+        if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+            shotArrAI[y_ref][x_ref] = 1
+            return "Hit"
+        else:
+            return "Miss"
