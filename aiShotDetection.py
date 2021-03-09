@@ -2,7 +2,7 @@
 # user shot selection
 
 
-import easy, shipPlacement2, time ,hardAI, shotDetection, Medium
+import easy, shipPlacement2, time ,hardAI, shotDetection, Medium, Med
 
 p1shotCount = 0
 p2shotCount = 0
@@ -64,10 +64,13 @@ def shot(player):
                     xShot = easy.getShot()
                     xChar = xShot[0]
                 elif(ai == 1):
-                    xShot = hardAI.hitShip()
-                    xChar = xShot[0]
+                    # hitCoordinates = (xCoord, yCoord)
                     if isHit:
+                    #     # Med.simpleAIShooter(hitCoordinates[0], hitCoordinates[1])
                         print(isHit)
+                    else:
+                        xShot = hardAI.hitShip()
+                        xChar = xShot[0]
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
                     print(xShot)

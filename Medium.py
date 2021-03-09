@@ -70,20 +70,6 @@ def simpleAIShooter(xCoord, yCoord):
         upCoords = simpleLookUp(xCoord, yCoord)
         print("up coordinates")
 
-        i = 0
-        j = 0
-        while i < 10:
-            while j < 10:
-                if playerShipArr[upCoords[1]][upCoords[0]] != 0 and shotArrAI[upCoords[1]][upCoords[0]] == 0:
-                    shotArrAI[upCoords[1]][upCoords[0]] = 1
-                    xCoord = i
-                    yCoord = j
-                    return [xCoord, yCoord]
-                j = j + 1
-            j = 0
-            i = i + 1
-        return [1, 1]
-
 
 
 def AIshooter(xCoord, yCoord):
@@ -119,14 +105,6 @@ def AIshooter(xCoord, yCoord):
             y_ref = y_orig
 
     return x_ref, y_ref;
-
-
-
-def simpleLookUp(x, y):
-    global x_ref, y_ref
-    x_ref = x
-    y_ref = y - 1
-    return (x_ref, y_ref)
 
 def look_up(x,y):
     global next_shot, orientation, x_orig, y_orig, x_ref, y_ref, hit
