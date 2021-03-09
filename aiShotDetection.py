@@ -34,7 +34,7 @@ p2shotArr = [
 ]
 
 # the coordinates shot at last by ai
-aiCoordinatesShotAt = [10, 10]
+aiCoordinatesHitAt = [10, 10]
 
 isHit = False
 
