@@ -33,6 +33,9 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+# the coordinates shot at last by ai
+aiCoordinatesShotAt = [10, 10]
+
 isHit = False
 
 def shot(player):
