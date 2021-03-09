@@ -33,7 +33,7 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
-# the coordinates shot at last by ai
+# the coordinates shot at last hit by ai
 aiCoordinatesHitAt = [10, 10]
 
 isHit = False
@@ -137,6 +137,9 @@ def shot(player):
             print("Player 2: ", end="")
             global isHit
             isHit = True
+            aiCoordinatesHitAt[0] = yCoord
+            aiCoordinatesHitAt[1] = xCoord
+            print("aiCoordinatesHitAt", aiCoordinatesHitAt[0], aiCoordinatesHitAt[1])
 
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
