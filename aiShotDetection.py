@@ -120,6 +120,9 @@ def shot(player):
             print("You have already fired on this location, please select another space:")
             repeatAll = True
 
+        if yCoord == -1:
+            repeatAll = True    
+
     # register shot
     shotArr[yCoord][xCoord] = 1
 

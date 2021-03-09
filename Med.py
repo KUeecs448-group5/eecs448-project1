@@ -115,6 +115,7 @@ def simpleLookUp(x, y):
         shotArrAI[y_ref][x_ref] = 1
         return "Hit"
     else:
+        print("x_ref, y_ref", x_ref, y_ref)
         return "Miss"
 
 def simpleLookDown(x, y):
