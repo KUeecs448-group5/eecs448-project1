@@ -116,6 +116,7 @@ def shot(player):
                 yCoord = (xShot[1])
 
         repeatAll = False
+        print("shotArr", xCoord, yCoord)
         if shotArr[yCoord][xCoord] == 1:
             print("You have already fired on this location, please select another space:")
             repeatAll = True
@@ -140,8 +141,8 @@ def shot(player):
             print("Player 2: ", end="")
             global isHit
             isHit = True
-            aiCoordinatesHitAt[0] = yCoord
-            aiCoordinatesHitAt[1] = xCoord
+            aiCoordinatesHitAt[0] = xCoord
+            aiCoordinatesHitAt[1] = yCoord
             print("aiCoordinatesHitAt", aiCoordinatesHitAt[0], aiCoordinatesHitAt[1])
 
         print("Shot hit!")

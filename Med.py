@@ -81,6 +81,7 @@ def simpleAIShooter(xCoord, yCoord):
                 next_shot = 2
             else:
                 next_shot = 0
+                aiShotDetection.aiCoordinatesHitAt = [10, 10]
 
         elif next_shot == 2:
             result = simpleLookRight(xCoord, yCoord)
@@ -88,6 +89,7 @@ def simpleAIShooter(xCoord, yCoord):
                 next_shot = 3
             else:
                 next_shot = 0
+                aiShotDetection.aiCoordinatesHitAt = [10, 10]
 
         elif next_shot == 3:
             result = simpleLookDown(xCoord, yCoord)
@@ -95,10 +97,12 @@ def simpleAIShooter(xCoord, yCoord):
                 next_shot = 4
             else:
                 next_shot = 0
+                aiShotDetection.aiCoordinatesHitAt = [10, 10]
 
         elif next_shot == 4:
             result = simpleLookLeft(xCoord, yCoord)
             next_shot = 0
+            aiShotDetection.aiCoordinatesHitAt = [10, 10]
     else:
         aiShotDetection.aiCoordinatesHitAt = [10, 10]
         next_shot = 1
@@ -108,49 +112,61 @@ def simpleAIShooter(xCoord, yCoord):
 
 def simpleLookUp(x, y):
     global x_ref, y_ref
-    x_ref = x
-    y_ref = y - 1
-    if (x_ref < 10 and y_ref < 10):
+    if (y_ref > 0):
+        x_ref = x
+        y_ref = y - 1
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
         else:
             print("x_ref, y_ref", x_ref, y_ref)
             return "Miss"
+    else:
+        x_ref = x
+        y_ref = y
 
 def simpleLookDown(x, y):
     global x_ref, y_ref
-    x_ref = x
-    y_ref = y + 1
 
-    if (x_ref < 10 and y_ref < 10):
+    if (y_ref < 9):
+        x_ref = x
+        y_ref = y + 1
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
         else:
             return "Miss"
+    else:
+        x_ref = x
+        y_ref = y
 
 
 def simpleLookRight(x, y):
     global x_ref, y_ref
-    x_ref = x + 1
-    y_ref = y
 
-    if (x_ref < 10 and y_ref < 10):
+    if (x_ref < 9):
+        x_ref = x + 1
+        y_ref = y
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
         else:
             return "Miss"
+    else:
+        x_ref = x
+        y_ref = y
 
 def simpleLookLeft(x, y):
     global x_ref, y_ref
-    x_ref = x - 1
-    y_ref = y
 
-    if (x_ref < 10 and y_ref < 10):
+    if (x_ref > 0):
+        x_ref = x - 1
+        y_ref = y
         if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
             shotArrAI[y_ref][x_ref] = 1
             return "Hit"
         else:
             return "Miss"
+    else:
+        x_ref = x
+        y_ref = y
