@@ -71,6 +71,8 @@ def simpleAIShooter(xCoord, yCoord):
     # if (next_shot == 0):
     #     next_shot = 1
     result = "Miss"
+    if (aiShotDetection.aiCoordinatesHitAt[0] != 10 and next_shot == 0):
+        next_shot = 1
     # 2. write conditional for next_shot
     # 3. in conditional, check for appropriate position for hit
         # 1. if hit
