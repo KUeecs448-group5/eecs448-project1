@@ -122,7 +122,7 @@ def shot(player):
             repeatAll = True
 
         # For medium ai to make sure adjacent y index is a valid place on board
-        if yCoord == -1:
+        if yCoord == -1 or xCoord == -1:
             repeatAll = True
 
     # register shot

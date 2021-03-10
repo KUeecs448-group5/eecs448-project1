@@ -123,7 +123,7 @@ def simpleLookUp(x, y):
             return "Miss"
     else:
         x_ref = x
-        y_ref = y
+        y_ref = y - 1
 
 def simpleLookDown(x, y):
     global x_ref, y_ref
@@ -168,5 +168,5 @@ def simpleLookLeft(x, y):
         else:
             return "Miss"
     else:
-        x_ref = x
+        x_ref = x - 1
         y_ref = y
