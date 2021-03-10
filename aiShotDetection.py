@@ -116,7 +116,7 @@ def shot(player):
                 yCoord = (xShot[1])
 
         repeatAll = False
-        print("shotArr", xCoord, yCoord)
+        print("shotArr", yCoord, xCoord)
         if shotArr[yCoord][xCoord] == 1:
             print("You have already fired on this location, please select another space:")
             repeatAll = True
@@ -143,7 +143,7 @@ def shot(player):
             isHit = True
             aiCoordinatesHitAt[0] = xCoord
             aiCoordinatesHitAt[1] = yCoord
-            print("aiCoordinatesHitAt", aiCoordinatesHitAt[0], aiCoordinatesHitAt[1])
+            print("aiCoordinatesHitAt", aiCoordinatesHitAt[1], aiCoordinatesHitAt[0])
 
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
