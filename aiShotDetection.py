@@ -71,7 +71,7 @@ def shot(player):
                         xShot = Med.simpleAIShooter(aiCoordinatesHitAt[0], aiCoordinatesHitAt[1])
                         xChar = xShot[0]
                     else:
-                        xShot = hardAI.hitShip()
+                        xShot = easy.getShot()
                         xChar = xShot[0]
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
