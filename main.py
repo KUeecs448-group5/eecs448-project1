@@ -124,6 +124,17 @@ while repeat == True:
 
 userInput = input("If you would like to play against the computer type 'computer', otherwise type any characters for a two-player game ")
 
+if (userInput == "computer"):
+    level = input("Please choose a difficulty level: Type 'Easy', 'Medium', or 'Hard'")
+
+    if (level == "Medium"):
+        aiShotDetection.ai = 1
+    elif (level == "Hard"):
+        aiShotDetection.ai = 2
+    # default is easy level
+    else:
+        aiShotDetection.ai = 0
+
 if userInput == "computer":
     runAI(shipCount)
 else:

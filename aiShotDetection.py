@@ -6,6 +6,8 @@ import easy, shipPlacement2, time ,hardAI, shotDetection, Medium, Med
 
 p1shotCount = 0
 p2shotCount = 0
+# initalize ai to dummy value
+ai = -1
 
 p1shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -62,7 +64,6 @@ def shot(player):
             if player == 1:
                 xChar = input('Enter a column [A-J] to fire upon: ')
             else:
-                ai = 1
                 if (ai == 0):
                     xShot = easy.getShot()
                     xChar = xShot[0]
