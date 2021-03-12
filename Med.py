@@ -115,7 +115,7 @@ def simpleAIShooter(xCoord, yCoord):
 
 
 def simpleLookUp(x, y):
-    global x_ref, y_ref
+    global x_ref, y_ref, next_shot
     if (y > 0):
         x_ref = x
         y_ref = y - 1
@@ -123,6 +123,7 @@ def simpleLookUp(x, y):
             print("result of simpleLookUp", y_ref, x_ref)
             if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
                 shotArrAI[y_ref][x_ref] = 1
+                next_shot = 0
                 return "Hit"
             else:
                 return "Miss"
@@ -136,7 +137,7 @@ def simpleLookUp(x, y):
         simpleLookRight(x_ref, y_ref)
 
 def simpleLookDown(x, y):
-    global x_ref, y_ref
+    global x_ref, y_ref, next_shot
 
     if (y < 9):
         x_ref = x
@@ -144,6 +145,7 @@ def simpleLookDown(x, y):
         if (shotArr[y_ref][x_ref] == 0):
             print("result of simpleLookDown", y_ref, x_ref)
             if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+                next_shot = 0
                 shotArrAI[y_ref][x_ref] = 1
                 return "Hit"
             else:
@@ -159,7 +161,7 @@ def simpleLookDown(x, y):
 
 
 def simpleLookRight(x, y):
-    global x_ref, y_ref
+    global x_ref, y_ref, next_shot
 
     if (x < 9):
         x_ref = x + 1
@@ -167,6 +169,7 @@ def simpleLookRight(x, y):
         if (shotArr[y_ref][x_ref] == 0):
             print("result of simpleLookRight", y_ref, x_ref)
             if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+                next_shot = 0
                 shotArrAI[y_ref][x_ref] = 1
                 return "Hit"
             else:
@@ -181,7 +184,7 @@ def simpleLookRight(x, y):
         simpleLookDown(x_ref, y_ref)
 
 def simpleLookLeft(x, y):
-    global x_ref, y_ref
+    global x_ref, y_ref, next_shot
 
     if (x > 0):
         x_ref = x - 1
@@ -189,6 +192,7 @@ def simpleLookLeft(x, y):
         if (shotArr[y_ref][x_ref] == 0):
             print("result of simpleLookLeft", y_ref, x_ref)
             if (playerShipArr[y_ref][x_ref] != 0 and shotArrAI[y_ref][x_ref] == 0):
+                next_shot = 0
                 shotArrAI[y_ref][x_ref] = 1
                 return "Hit"
             else:
