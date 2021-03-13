@@ -6,6 +6,7 @@ startingArray1 = [[]]
 startingArray2 = [[]]
 initialShipNumber1 = 0
 initialShipNumber2 = 0
+scores = [0, 0]
 
 #fills a local variable with the initial placements for the players/ai
 def initializeScore(arr1, arr2):
@@ -29,26 +30,18 @@ def spotsRemaining(array):
     return shipSpots
 
 
-#takes in updated player/ai arrays, returns [score1, score2]
-def returnScores(current1, current2):
-    shotDiff1 = initialShipNumber1 - spotsRemaining(current1)
-    shotDiff2 = initialShipNumber2 - spotsRemaining(current2)
-    return [shotDiff1, shotDiff2]
-
-
 #prints a command line representation of each player's score based on their current board states
-def printScoreboard(array1, array2, aiCheck):
+def printScoreboard(aiCheck):
     print('')
     print('        Scores:       ')
     print('----------------------')
     if aiCheck:
-        print('Player: ', returnScores(array1, array2)[0], "/", initialShipNumber1)
-        print('AI: ', returnScores(array1, array2)[1], "/", initialShipNumber2)
+        print('Player: ', scores[0], "/", initialShipNumber1)
+        print('AI: ', scores[1], "/", initialShipNumber2)
     else:
-        print('Player 1: ', returnScores(array1, array2)[0], "/", initialShipNumber1)
-        print('Player 2: ', returnScores(array1, array2)[1], "/", initialShipNumber2)
+        print('Player 1: ', scores[0], "/", initialShipNumber1)
+        print('Player 2: ', scores[1], "/", initialShipNumber2)
     print('----------------------')
-    print('')
 
 
 

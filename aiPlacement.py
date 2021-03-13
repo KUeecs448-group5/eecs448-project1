@@ -80,7 +80,7 @@ def placeShip(player, shipCount):
     Precondition: player variable initialized, shipCount value from 1-6
     Postcondition: ship object is placed on board
     """
-    # player 1 = 0, player 2 = 1, AI = 2
+    # player 1 = 0, player 2 = 1
     for i in range(1, int(shipCount) + 1):  # i = size of ship currently placing
         input = userInput(i)  # fetch orientation and coordinates
         xVar, yVar, fVar = input
