@@ -1,0 +1,17 @@
+Working with Git:
+  1. https://docs.github.com/en/github/managing-files-in-a-repository/renaming-a-file
+  2. https://github.community/t/update-a-forked-repository-when-the-original-repository-is-updated/1855
+
+Python:
+  1. Working with the "global" keyword in Python: https://www.programiz.com/python-programming/global-keyword
+  2. Adding an item to a tuple in Python: https://stackoverflow.com/questions/16730339/python-add-item-to-the-tuple
+  3. Getting the first character in as string: https://stackoverflow.com/questions/7108080/python-get-the-first-character-of-the-first-string-in-a-list
+  4. Stack Overflow post dealing with an error in Python: https://stackoverflow.com/questions/21030116/python-test-average-calculator-returen-error-list-object-has-no-attribute-len
+  5. Adding to an array: https://www.journaldev.com/33185/python-add-to-array
+  6. Objects in Python: https://stackoverflow.com/questions/3335268/are-object-literals-pythonic
+  7. String method in Python: https://www.programiz.com/python-programming/methods/string/lower
+  8. Python wiki page: https://wiki.python.org/moin/BeginnersGuide/Programmers
+
+Setting Up Development Environment:
+  1. Updating Python on a Mac: https://stackoverflow.com/questions/1687357/updating-python-on-mac
+  2. Setting up a Python Development Environment in VSCode: https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line and https://code.visualstudio.com/docs/python/python-tutorial

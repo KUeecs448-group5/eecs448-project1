@@ -1,11 +1,11 @@
-import shipPlacement2, shotDetection
+import shipPlacement2, shotDetection, aiPlacement, aiShotDetection
 from termcolor import colored
 
 #print top map - 'X' denotes successful shot, 'O' denotes missed shot, '^' denotes area not fired upon
 
 def printTopMap(player):
     """
-    Prints target mapping of turn player(coordinates that turn player has shot, and that denotes whether hit and missed enemy, and locations 
+    Prints target mapping of turn player(coordinates that turn player has shot, and that denotes whether hit and missed enemy, and locations
     has not shot at yet)
     player: tells program whose turn it is
     Precondition: player variable initialized
@@ -13,10 +13,10 @@ def printTopMap(player):
     """
     if player == 1:
         enemyShipArr = shipPlacement2.p2shipArr
-        shotArr = shotDetection.p1shotArr
+        shotArr = shotDetection.p1shotArr # original shotDetection.p1shotArr
     elif player == 2:
         enemyShipArr = shipPlacement2.p1shipArr
-        shotArr = shotDetection.p2shotArr
+        shotArr = shotDetection.p2shotArr # original shotDetection.p2shotArr
     print("Shots taken at enemy:")
     print("  A B C D E F G H I J")
     for i in range(0, 10):
@@ -37,7 +37,7 @@ def printTopMap(player):
 #print bottom map - 'X' denotes ship placement, '*' denotes hit ship, '^' denotes area not fired upon by enemy
 def printBottomMap(player):
     """
-    Prints out map of turn player's ship placements 
+    Prints out map of turn player's ship placements
     player: tells program whose turn it is
     Precondition: player variable initialized
     Postcondition: turn player's ship placements printed in command line
@@ -48,6 +48,7 @@ def printBottomMap(player):
     elif player == 2:
         shipArr = shipPlacement2.p2shipArr
         shotArr = shotDetection.p1shotArr
+
     print("Your ships:")
     print("  A B C D E F G H I J")
     for i in range(0, 10):

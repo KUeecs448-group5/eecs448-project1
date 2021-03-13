@@ -3,20 +3,20 @@
 
 
 from shipObject import Ship
-import random
+import random, Print, shipPlacement2
 
-AIshipArr = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-]
+# AIshipArr = [
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+#     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# ]
 
 
 # userInput to be called repeatedly in case of a bad ship placement
@@ -52,28 +52,28 @@ def shipDefiner(x, y, z, t):  # looks at the request space, if available places 
     if z == 1:  # check vertical hang off
         if (y + t - 1) > 9:
             return False
-    if AIshipArr[y][x] != 0:  # check if first node is occupied
+    if shipPlacement2.p2shipArr[y][x] != 0:  # check if first node is occupied
         return False
     if z == 0:  # check horizontal occupied
         for i in range(1, t):  # should run from 1 to t-1
-            if AIshipArr[y][x + i] != 0:
+            if shipPlacement2.p2shipArr[y][x + i] != 0:
                 return False
         for i in range(0, t):  # if it runs this for loop, the ship is in a valid position and the array can be changed
-            AIshipArr[y][x + i] = t  # using t as a unique marker for each ship
+            shipPlacement2.p2shipArr[y][x + i] = t  # using t as a unique marker for each ship
     if z == 1:  # same thing for vertical
         for i in range(1, t):  # should run from 1 to t-1
-            if AIshipArr[y + i][x] != 0:
+            if shipPlacement2.p2shipArr[y + i][x] != 0:
                 return False
         for i in range(0, t):
-            AIshipArr[y + i][x] = t
+            shipPlacement2.p2shipArr[y + i][x] = t
     return True
 
 
-objArr = []
+objArr = [[], []]
 
 
 # call to place all ships for the AI
-def placeShip(shipCount):
+def placeShip(player, shipCount):
     """
     places Ship object on board with shipDefiner and userInput methods.
     shipCount: number of ships(potentially of various sizes) that each player has.
@@ -89,7 +89,12 @@ def placeShip(shipCount):
             input = userInput(i)
             xVar, yVar, fVar = input
             test = shipDefiner(xVar, yVar, fVar, i)
-        objArr.append(Ship(i, 2))
+        shipPlacement2.objArr[player].append(Ship(i, player))
+        print()
+        print("Current ship placement:")
+        Print.printBottomMap(player + 1)
+        print()
+
 
 #a simple console test to see the randomly generated board
 '''
