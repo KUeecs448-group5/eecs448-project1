@@ -11,6 +11,7 @@ Python:
   6. Objects in Python: https://stackoverflow.com/questions/3335268/are-object-literals-pythonic
   7. String method in Python: https://www.programiz.com/python-programming/methods/string/lower
   8. Python wiki page: https://wiki.python.org/moin/BeginnersGuide/Programmers
+  9. isnumeric() method in Python: https://www.tutorialspoint.com/python/string_isnumeric.htm
 
 Setting Up Development Environment:
   1. Updating Python on a Mac: https://stackoverflow.com/questions/1687357/updating-python-on-mac
