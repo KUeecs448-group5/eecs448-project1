@@ -2,10 +2,12 @@
 # user shot selection
 
 
-import Easy, shipPlacement2, time ,hardAI, shotDetection
+import easy, shipPlacement2, time ,hardAI, shotDetection, Medium, Med
 
 p1shotCount = 0
 p2shotCount = 0
+# initalize ai to dummy value
+ai = -1
 
 p1shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -33,6 +35,10 @@ p2shotArr = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+# the coordinates shot at last hit by ai
+aiCoordinatesHitAt = [10, 10]
+
+isHit = False
 
 def shot(player):
     """
@@ -41,6 +47,7 @@ def shot(player):
     Precondition: player variable to be initialized
     Postcondition: depending on which player, one value of opposing player is changed
     """
+
     if player == 1:
         shotArr = shotDetection.p1shotArr # original p1shotArr
         enemyShipArr = shipPlacement2.p2shipArr
@@ -57,13 +64,16 @@ def shot(player):
             if player == 1:
                 xChar = input('Enter a column [A-J] to fire upon: ')
             else:
-                ai = 2
-                if( ai == 0):
-                    xShot = Easy.getShot()
+                if (ai == 0):
+                    xShot = easy.getShot()
                     xChar = xShot[0]
-                #elif( ai == 1):
-                   # xShot = medium.getShot()
-                   # xChar = xShot[0]
+                elif(ai == 1):
+                    if aiCoordinatesHitAt[0] != 10:
+                        xShot = Med.simpleAIShooter(aiCoordinatesHitAt[0], aiCoordinatesHitAt[1])
+                        xChar = xShot[0]
+                    else:
+                        xShot = easy.getShot()
+                        xChar = xShot[0]
                 elif (ai == 2):
                     xShot = hardAI.hitShip()
                     print(xShot)
@@ -89,7 +99,7 @@ def shot(player):
             elif xChar == "J" or xChar == "j" or xChar == 9:
                 xCoord = 9
             else:
-                print("Invalid input. Try again")
+                print("Invalid input. Try again", xChar)
                 repeat = True
 
         repeat = True
@@ -107,8 +117,13 @@ def shot(player):
                 yCoord = (xShot[1])
 
         repeatAll = False
+        print("shotArr", yCoord, xCoord)
         if shotArr[yCoord][xCoord] == 1:
             print("You have already fired on this location, please select another space:")
+            repeatAll = True
+
+        # For medium ai to make sure adjacent y index is a valid place on board
+        if yCoord == -1 or xCoord == -1:
             repeatAll = True
 
     # register shot
@@ -125,6 +140,12 @@ def shot(player):
             global p2shotCount
             p2shotCount = p2shotCount + 1
             print("Player 2: ", end="")
+            global isHit
+            isHit = True
+            aiCoordinatesHitAt[0] = xCoord
+            aiCoordinatesHitAt[1] = yCoord
+            print("aiCoordinatesHitAt", aiCoordinatesHitAt[1], aiCoordinatesHitAt[0])
+
         print("Shot hit!")
         shipPlacement2.objArr[player - 1][enemyShipArr[yCoord][xCoord] - 1].hit()  # register hit in ship object
         input("Switch players then press Enter to continue...")

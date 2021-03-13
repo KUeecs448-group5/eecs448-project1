@@ -29,7 +29,6 @@ my_list = my_list_reset
 
 def getShot():
     # print(random_list[0])
-    # print(random_list)
     xShot = random_list[0]
     # print(xShot)
     xCoord = xShot[0]
